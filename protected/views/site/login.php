@@ -26,13 +26,13 @@ $this->breadcrumbs=array(
 
 	<div class="row">
 		<?php echo $form->labelEx($model,'username'); ?>
-		<?php echo $form->textField($model,'username'); ?>
+		<?php echo $form->textField($model,'username',array("class" => "form-control")); ?>
 		<?php echo $form->error($model,'username'); ?>
 	</div>
 
 	<div class="row">
 		<?php echo $form->labelEx($model,'password'); ?>
-		<?php echo $form->passwordField($model,'password'); ?>
+		<?php echo $form->passwordField($model,'password',array("class" => "form-control")); ?>
 		<?php echo $form->error($model,'password'); ?>
 		<p class="hint">
 			If you are new plese register before .	<a href="?r=register">Register</a> 
@@ -40,8 +40,8 @@ $this->breadcrumbs=array(
 	</div>
 
 	<div class="row rememberMe">
-		<?php echo $form->checkBox($model,'rememberMe'); ?>
-		<?php echo $form->label($model,'rememberMe'); ?>
+		<?php echo $form->checkBox($model,'rememberMe',array("class" => "form-check-input")); ?>
+		<?php echo $form->label($model,'rememberMe',); ?>
 		<?php echo $form->error($model,'rememberMe'); ?>
 	</div>
 
@@ -51,3 +51,9 @@ $this->breadcrumbs=array(
 
 <?php $this->endWidget(); ?>
 </div><!-- form -->
+
+<script>
+
+	document.querySelector('input[type="submit"]').classList.add('btn')
+	document.querySelector('input[type="submit"]').classList.add('btn-primary')
+</script>

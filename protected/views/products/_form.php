@@ -47,7 +47,7 @@
 
 		<?php if ($model->isNewRecord != '1') { ?>
 			<div class="input-group mb-3">
-				<?php echo CHtml::image(Yii::app()->request->baseUrl  . $model->img, "img", array("width" => 200)); ?>
+				<?php echo CHtml::image(Yii::app()->request->baseUrl . $model->img, "img", array("width" => 200)); ?>
 			</div>
 		<?php } ?>
 

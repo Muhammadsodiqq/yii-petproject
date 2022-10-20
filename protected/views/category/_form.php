@@ -30,10 +30,6 @@
 		<?php echo $form->textField($model,'status',array("class" => "form-control")); ?>
 		<?php echo $form->error($model,'status'); ?>
 	</div>
-
-
-
-
 	<div class="row buttons">
 		<?php echo CHtml::submitButton($model->isNewRecord ? 'Create' : 'Save'); ?>
 	</div>

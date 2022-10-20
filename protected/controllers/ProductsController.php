@@ -35,12 +35,12 @@ class ProductsController extends Controller
 			array(
 				'allow', // allow authenticated user to perform 'create' and 'update' actions
 				'actions' => array('create', 'update'),
-				'users' => array('@'),
+				'roles' => array('1')
 			),
 			array(
 				'allow', // allow admin user to perform 'admin' and 'delete' actions
 				'actions' => array('admin', 'delete'),
-				'users' => array('admin'),
+				'roles' => array('1')
 			),
 			array(
 				'deny',  // deny all users
@@ -120,11 +120,11 @@ class ProductsController extends Controller
 			$uploadedFile = CUploadedFile::getInstance($model, 'img');
 			$fileName = "{$rnd}-{$uploadedFile}";
 
-			if(!empty($uploadedFile)){
+			if (!empty($uploadedFile)) {
 				$model->img = "/product/$fileName";
 			}
 			$model->user_id = $id;
-			
+
 			if ($model->save()) {
 				if (!empty($uploadedFile))  // check if uploaded file is set or not
 				{
@@ -164,7 +164,13 @@ class ProductsController extends Controller
 	 */
 	public function actionIndex()
 	{
-		$dataProvider = new CActiveDataProvider('Products');
+
+		$dataProvider = new CActiveDataProvider('Products', array(
+			'criteria' => array(
+				'condition' => 'is_deleted=0',
+				'order' => 'created_at DESC',
+			),
+		));
 		$this->render('index', array(
 			'dataProvider' => $dataProvider,
 		));

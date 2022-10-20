@@ -3905,3 +3905,1585 @@ Stack trace:
 REQUEST_URI=/index.php?r=products/delete&id=21
 HTTP_REFERER=http://project-app.com/index.php?r=products/view&id=21
 ---
+2022/10/20 06:58:48 [error] [exception.CException] CException: Property "CActiveDataProvider.condition" is not defined. in C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\base\CComponent.php:173
+Stack trace:
+#0 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\web\CActiveDataProvider.php(96): CComponent->__set('condition', 'is_deleted=0')
+#1 C:\Users\xolmu\OneDrive\Рабочий стол\shop_pet_project\protected\controllers\ProductsController.php(168): CActiveDataProvider->__construct('Products', Array)
+#2 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\web\actions\CInlineAction.php(49): ProductsController->actionIndex()
+#3 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#4 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\web\filters\CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#5 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#6 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\web\CController.php(1148): CFilter->filter(Object(CFilterChain))
+#7 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#8 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#9 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\web\CController.php(291): CFilterChain->run()
+#10 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#11 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\web\CWebApplication.php(282): CController->run('index')
+#12 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\web\CWebApplication.php(141): CWebApplication->runController('products/index')
+#13 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#14 C:\Users\xolmu\OneDrive\Рабочий стол\shop_pet_project\index.php(13): CApplication->run()
+#15 {main}
+REQUEST_URI=/index.php?r=products/index
+HTTP_REFERER=http://project-app.com/index.php?r=products/admin
+---
+2022/10/20 07:01:11 [error] [system.db.CDbCommand] CDbCommand::fetchColumn() failed: SQLSTATE[23000]: Integrity constraint violation: 1052 Column 'is_deleted' in where clause is ambiguous. The SQL statement executed was: SELECT COUNT(DISTINCT `t`.`id`) FROM `products` `t`  LEFT OUTER JOIN `categories` `category` ON (`t`.`category_id`=`category`.`id`) WHERE (is_deleted=0).
+in C:\Users\xolmu\OneDrive\Рабочий стол\shop_pet_project\protected\views\products\index.php (20)
+in C:\Users\xolmu\OneDrive\Рабочий стол\shop_pet_project\protected\controllers\ProductsController.php (176)
+in C:\Users\xolmu\OneDrive\Рабочий стол\shop_pet_project\index.php (13)
+2022/10/20 07:01:11 [error] [exception.CDbException] CDbException: CDbCommand failed to execute the SQL statement: SQLSTATE[23000]: Integrity constraint violation: 1052 Column 'is_deleted' in where clause is ambiguous. The SQL statement executed was: SELECT COUNT(DISTINCT `t`.`id`) FROM `products` `t`  LEFT OUTER JOIN `categories` `category` ON (`t`.`category_id`=`category`.`id`) WHERE (is_deleted=0) in C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\db\CDbCommand.php:543
+Stack trace:
+#0 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\db\CDbCommand.php(433): CDbCommand->queryInternal('fetchColumn', 0, Array)
+#1 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\db\ar\CActiveFinder.php(766): CDbCommand->queryScalar()
+#2 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\db\ar\CActiveFinder.php(151): CJoinElement->count(Object(CDbCriteria))
+#3 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\db\ar\CActiveRecord.php(1613): CActiveFinder->count(Object(CDbCriteria))
+#4 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\web\CActiveDataProvider.php(228): CActiveRecord->count(Object(CDbCriteria))
+#5 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\web\CDataProvider.php(224): CActiveDataProvider->calculateTotalItemCount()
+#6 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\web\CActiveDataProvider.php(178): CDataProvider->getTotalItemCount()
+#7 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\web\CDataProvider.php(168): CActiveDataProvider->fetchData()
+#8 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\zii\widgets\CBaseListView.php(125): CDataProvider->getData()
+#9 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\zii\widgets\CListView.php(211): CBaseListView->init()
+#10 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\web\CBaseController.php(147): CListView->init()
+#11 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\web\CBaseController.php(181): CBaseController->createWidget('zii.widgets.CLi...', Array)
+#12 C:\Users\xolmu\OneDrive\Рабочий стол\shop_pet_project\protected\views\products\index.php(20): CBaseController->widget('zii.widgets.CLi...', Array)
+#13 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\web\CBaseController.php(126): require('C:\\Users\\xolmu\\...')
+#14 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\\Users\\xolmu\\...', Array, true)
+#15 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\web\CController.php(872): CBaseController->renderFile('C:\\Users\\xolmu\\...', Array, true)
+#16 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\web\CController.php(785): CController->renderPartial('index', Array, true)
+#17 C:\Users\xolmu\OneDrive\Рабочий стол\shop_pet_project\protected\controllers\ProductsController.php(176): CController->render('index', Array)
+#18 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\web\actions\CInlineAction.php(49): ProductsController->actionIndex()
+#19 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#20 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\web\filters\CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#21 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#22 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\web\CController.php(1148): CFilter->filter(Object(CFilterChain))
+#23 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#24 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#25 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\web\CController.php(291): CFilterChain->run()
+#26 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#27 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\web\CWebApplication.php(282): CController->run('index')
+#28 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\web\CWebApplication.php(141): CWebApplication->runController('products/index')
+#29 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#30 C:\Users\xolmu\OneDrive\Рабочий стол\shop_pet_project\index.php(13): CApplication->run()
+#31 {main}
+REQUEST_URI=/index.php?r=products/index
+HTTP_REFERER=http://project-app.com/index.php?r=products/admin
+---
+2022/10/20 07:01:21 [error] [system.db.CDbCommand] CDbCommand::fetchColumn() failed: SQLSTATE[23000]: Integrity constraint violation: 1052 Column 'is_deleted' in where clause is ambiguous. The SQL statement executed was: SELECT COUNT(DISTINCT `t`.`id`) FROM `products` `t`  LEFT OUTER JOIN `users` `user` ON (`t`.`user_id`=`user`.`id`) WHERE (is_deleted=0).
+in C:\Users\xolmu\OneDrive\Рабочий стол\shop_pet_project\protected\views\products\index.php (20)
+in C:\Users\xolmu\OneDrive\Рабочий стол\shop_pet_project\protected\controllers\ProductsController.php (176)
+in C:\Users\xolmu\OneDrive\Рабочий стол\shop_pet_project\index.php (13)
+2022/10/20 07:01:21 [error] [exception.CDbException] CDbException: CDbCommand failed to execute the SQL statement: SQLSTATE[23000]: Integrity constraint violation: 1052 Column 'is_deleted' in where clause is ambiguous. The SQL statement executed was: SELECT COUNT(DISTINCT `t`.`id`) FROM `products` `t`  LEFT OUTER JOIN `users` `user` ON (`t`.`user_id`=`user`.`id`) WHERE (is_deleted=0) in C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\db\CDbCommand.php:543
+Stack trace:
+#0 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\db\CDbCommand.php(433): CDbCommand->queryInternal('fetchColumn', 0, Array)
+#1 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\db\ar\CActiveFinder.php(766): CDbCommand->queryScalar()
+#2 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\db\ar\CActiveFinder.php(151): CJoinElement->count(Object(CDbCriteria))
+#3 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\db\ar\CActiveRecord.php(1613): CActiveFinder->count(Object(CDbCriteria))
+#4 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\web\CActiveDataProvider.php(228): CActiveRecord->count(Object(CDbCriteria))
+#5 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\web\CDataProvider.php(224): CActiveDataProvider->calculateTotalItemCount()
+#6 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\web\CActiveDataProvider.php(178): CDataProvider->getTotalItemCount()
+#7 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\web\CDataProvider.php(168): CActiveDataProvider->fetchData()
+#8 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\zii\widgets\CBaseListView.php(125): CDataProvider->getData()
+#9 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\zii\widgets\CListView.php(211): CBaseListView->init()
+#10 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\web\CBaseController.php(147): CListView->init()
+#11 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\web\CBaseController.php(181): CBaseController->createWidget('zii.widgets.CLi...', Array)
+#12 C:\Users\xolmu\OneDrive\Рабочий стол\shop_pet_project\protected\views\products\index.php(20): CBaseController->widget('zii.widgets.CLi...', Array)
+#13 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\web\CBaseController.php(126): require('C:\\Users\\xolmu\\...')
+#14 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\\Users\\xolmu\\...', Array, true)
+#15 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\web\CController.php(872): CBaseController->renderFile('C:\\Users\\xolmu\\...', Array, true)
+#16 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\web\CController.php(785): CController->renderPartial('index', Array, true)
+#17 C:\Users\xolmu\OneDrive\Рабочий стол\shop_pet_project\protected\controllers\ProductsController.php(176): CController->render('index', Array)
+#18 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\web\actions\CInlineAction.php(49): ProductsController->actionIndex()
+#19 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#20 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\web\filters\CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#21 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#22 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\web\CController.php(1148): CFilter->filter(Object(CFilterChain))
+#23 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#24 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#25 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\web\CController.php(291): CFilterChain->run()
+#26 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#27 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\web\CWebApplication.php(282): CController->run('index')
+#28 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\web\CWebApplication.php(141): CWebApplication->runController('products/index')
+#29 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#30 C:\Users\xolmu\OneDrive\Рабочий стол\shop_pet_project\index.php(13): CApplication->run()
+#31 {main}
+REQUEST_URI=/index.php?r=products/index
+HTTP_REFERER=http://project-app.com/index.php?r=products/admin
+---
+2022/10/20 07:01:59 [error] [system.db.CDbCommand] CDbCommand::fetchColumn() failed: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'products.is_deleted' in 'where clause'. The SQL statement executed was: SELECT COUNT(DISTINCT `t`.`id`) FROM `products` `t`  LEFT OUTER JOIN `users` `user` ON (`t`.`user_id`=`user`.`id`) WHERE (products.is_deleted=0).
+in C:\Users\xolmu\OneDrive\Рабочий стол\shop_pet_project\protected\views\products\index.php (20)
+in C:\Users\xolmu\OneDrive\Рабочий стол\shop_pet_project\protected\controllers\ProductsController.php (176)
+in C:\Users\xolmu\OneDrive\Рабочий стол\shop_pet_project\index.php (13)
+2022/10/20 07:01:59 [error] [exception.CDbException] CDbException: CDbCommand failed to execute the SQL statement: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'products.is_deleted' in 'where clause'. The SQL statement executed was: SELECT COUNT(DISTINCT `t`.`id`) FROM `products` `t`  LEFT OUTER JOIN `users` `user` ON (`t`.`user_id`=`user`.`id`) WHERE (products.is_deleted=0) in C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\db\CDbCommand.php:543
+Stack trace:
+#0 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\db\CDbCommand.php(433): CDbCommand->queryInternal('fetchColumn', 0, Array)
+#1 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\db\ar\CActiveFinder.php(766): CDbCommand->queryScalar()
+#2 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\db\ar\CActiveFinder.php(151): CJoinElement->count(Object(CDbCriteria))
+#3 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\db\ar\CActiveRecord.php(1613): CActiveFinder->count(Object(CDbCriteria))
+#4 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\web\CActiveDataProvider.php(228): CActiveRecord->count(Object(CDbCriteria))
+#5 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\web\CDataProvider.php(224): CActiveDataProvider->calculateTotalItemCount()
+#6 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\web\CActiveDataProvider.php(178): CDataProvider->getTotalItemCount()
+#7 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\web\CDataProvider.php(168): CActiveDataProvider->fetchData()
+#8 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\zii\widgets\CBaseListView.php(125): CDataProvider->getData()
+#9 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\zii\widgets\CListView.php(211): CBaseListView->init()
+#10 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\web\CBaseController.php(147): CListView->init()
+#11 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\web\CBaseController.php(181): CBaseController->createWidget('zii.widgets.CLi...', Array)
+#12 C:\Users\xolmu\OneDrive\Рабочий стол\shop_pet_project\protected\views\products\index.php(20): CBaseController->widget('zii.widgets.CLi...', Array)
+#13 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\web\CBaseController.php(126): require('C:\\Users\\xolmu\\...')
+#14 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\\Users\\xolmu\\...', Array, true)
+#15 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\web\CController.php(872): CBaseController->renderFile('C:\\Users\\xolmu\\...', Array, true)
+#16 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\web\CController.php(785): CController->renderPartial('index', Array, true)
+#17 C:\Users\xolmu\OneDrive\Рабочий стол\shop_pet_project\protected\controllers\ProductsController.php(176): CController->render('index', Array)
+#18 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\web\actions\CInlineAction.php(49): ProductsController->actionIndex()
+#19 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#20 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\web\filters\CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#21 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#22 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\web\CController.php(1148): CFilter->filter(Object(CFilterChain))
+#23 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#24 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#25 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\web\CController.php(291): CFilterChain->run()
+#26 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#27 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\web\CWebApplication.php(282): CController->run('index')
+#28 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\web\CWebApplication.php(141): CWebApplication->runController('products/index')
+#29 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#30 C:\Users\xolmu\OneDrive\Рабочий стол\shop_pet_project\index.php(13): CApplication->run()
+#31 {main}
+REQUEST_URI=/index.php?r=products/index
+HTTP_REFERER=http://project-app.com/index.php?r=products/admin
+---
+2022/10/20 07:02:05 [error] [system.db.CDbCommand] CDbCommand::fetchColumn() failed: SQLSTATE[23000]: Integrity constraint violation: 1052 Column 'is_deleted' in where clause is ambiguous. The SQL statement executed was: SELECT COUNT(DISTINCT `t`.`id`) FROM `products` `t`  LEFT OUTER JOIN `users` `user` ON (`t`.`user_id`=`user`.`id`) WHERE (is_deleted=0).
+in C:\Users\xolmu\OneDrive\Рабочий стол\shop_pet_project\protected\views\products\index.php (20)
+in C:\Users\xolmu\OneDrive\Рабочий стол\shop_pet_project\protected\controllers\ProductsController.php (176)
+in C:\Users\xolmu\OneDrive\Рабочий стол\shop_pet_project\index.php (13)
+2022/10/20 07:02:05 [error] [exception.CDbException] CDbException: CDbCommand failed to execute the SQL statement: SQLSTATE[23000]: Integrity constraint violation: 1052 Column 'is_deleted' in where clause is ambiguous. The SQL statement executed was: SELECT COUNT(DISTINCT `t`.`id`) FROM `products` `t`  LEFT OUTER JOIN `users` `user` ON (`t`.`user_id`=`user`.`id`) WHERE (is_deleted=0) in C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\db\CDbCommand.php:543
+Stack trace:
+#0 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\db\CDbCommand.php(433): CDbCommand->queryInternal('fetchColumn', 0, Array)
+#1 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\db\ar\CActiveFinder.php(766): CDbCommand->queryScalar()
+#2 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\db\ar\CActiveFinder.php(151): CJoinElement->count(Object(CDbCriteria))
+#3 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\db\ar\CActiveRecord.php(1613): CActiveFinder->count(Object(CDbCriteria))
+#4 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\web\CActiveDataProvider.php(228): CActiveRecord->count(Object(CDbCriteria))
+#5 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\web\CDataProvider.php(224): CActiveDataProvider->calculateTotalItemCount()
+#6 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\web\CActiveDataProvider.php(178): CDataProvider->getTotalItemCount()
+#7 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\web\CDataProvider.php(168): CActiveDataProvider->fetchData()
+#8 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\zii\widgets\CBaseListView.php(125): CDataProvider->getData()
+#9 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\zii\widgets\CListView.php(211): CBaseListView->init()
+#10 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\web\CBaseController.php(147): CListView->init()
+#11 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\web\CBaseController.php(181): CBaseController->createWidget('zii.widgets.CLi...', Array)
+#12 C:\Users\xolmu\OneDrive\Рабочий стол\shop_pet_project\protected\views\products\index.php(20): CBaseController->widget('zii.widgets.CLi...', Array)
+#13 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\web\CBaseController.php(126): require('C:\\Users\\xolmu\\...')
+#14 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\\Users\\xolmu\\...', Array, true)
+#15 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\web\CController.php(872): CBaseController->renderFile('C:\\Users\\xolmu\\...', Array, true)
+#16 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\web\CController.php(785): CController->renderPartial('index', Array, true)
+#17 C:\Users\xolmu\OneDrive\Рабочий стол\shop_pet_project\protected\controllers\ProductsController.php(176): CController->render('index', Array)
+#18 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\web\actions\CInlineAction.php(49): ProductsController->actionIndex()
+#19 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#20 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\web\filters\CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#21 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#22 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\web\CController.php(1148): CFilter->filter(Object(CFilterChain))
+#23 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#24 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#25 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\web\CController.php(291): CFilterChain->run()
+#26 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#27 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\web\CWebApplication.php(282): CController->run('index')
+#28 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\web\CWebApplication.php(141): CWebApplication->runController('products/index')
+#29 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#30 C:\Users\xolmu\OneDrive\Рабочий стол\shop_pet_project\index.php(13): CApplication->run()
+#31 {main}
+REQUEST_URI=/index.php?r=products/index
+HTTP_REFERER=http://project-app.com/index.php?r=products/admin
+---
+2022/10/20 07:03:44 [error] [exception.ParseError] ParseError: syntax error, unexpected token "," in C:\Users\xolmu\OneDrive\Рабочий стол\shop_pet_project\protected\views\products\_form.php:50
+Stack trace:
+#0 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\\Users\\xolmu\\...', Array, true)
+#1 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\web\CController.php(872): CBaseController->renderFile('C:\\Users\\xolmu\\...', Array, true)
+#2 C:\Users\xolmu\OneDrive\Рабочий стол\shop_pet_project\protected\views\products\update.php(21): CController->renderPartial('_form', Array)
+#3 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\web\CBaseController.php(126): require('C:\\Users\\xolmu\\...')
+#4 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\\Users\\xolmu\\...', Array, true)
+#5 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\web\CController.php(872): CBaseController->renderFile('C:\\Users\\xolmu\\...', Array, true)
+#6 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\web\CController.php(785): CController->renderPartial('update', Array, true)
+#7 C:\Users\xolmu\OneDrive\Рабочий стол\shop_pet_project\protected\controllers\ProductsController.php(142): CController->render('update', Array)
+#8 [internal function]: ProductsController->actionUpdate(4)
+#9 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\web\actions\CAction.php(115): ReflectionMethod->invokeArgs(Object(ProductsController), Array)
+#10 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\web\actions\CInlineAction.php(47): CAction->runWithParamsInternal(Object(ProductsController), Object(ReflectionMethod), Array)
+#11 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#12 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\web\filters\CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#13 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#14 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\web\CController.php(1148): CFilter->filter(Object(CFilterChain))
+#15 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#16 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#17 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\web\CController.php(291): CFilterChain->run()
+#18 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#19 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\web\CWebApplication.php(282): CController->run('update')
+#20 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\web\CWebApplication.php(141): CWebApplication->runController('products/update')
+#21 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#22 C:\Users\xolmu\OneDrive\Рабочий стол\shop_pet_project\index.php(13): CApplication->run()
+#23 {main}
+REQUEST_URI=/index.php?r=products/update&id=25
+HTTP_REFERER=http://project-app.com/index.php?r=products/update&id=25
+---
+2022/10/20 07:29:27 [error] [exception.CException] CException: Property "CFileValidator.0" is not defined. in C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\base\CComponent.php:173
+Stack trace:
+#0 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\validators\CValidator.php(177): CComponent->__set('0', 'allowEmpty')
+#1 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\base\CModel.php(287): CValidator::createValidator(0, Object(Products), Array, Array)
+#2 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\base\CModel.php(260): CModel->createValidators()
+#3 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\base\CModel.php(547): CModel->getValidators()
+#4 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\base\CModel.php(468): CModel->getSafeAttributeNames()
+#5 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\base\CComponent.php(152): CModel->setAttributes(Array)
+#6 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\db\ar\CActiveRecord.php(162): CComponent->__set('attributes', Array)
+#7 C:\Users\xolmu\OneDrive\Рабочий стол\shop_pet_project\protected\controllers\ProductsController.php(118): CActiveRecord->__set('attributes', Array)
+#8 [internal function]: ProductsController->actionUpdate(4)
+#9 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\web\actions\CAction.php(115): ReflectionMethod->invokeArgs(Object(ProductsController), Array)
+#10 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\web\actions\CInlineAction.php(47): CAction->runWithParamsInternal(Object(ProductsController), Object(ReflectionMethod), Array)
+#11 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#12 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\web\filters\CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#13 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#14 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\web\CController.php(1148): CFilter->filter(Object(CFilterChain))
+#15 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#16 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#17 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\web\CController.php(291): CFilterChain->run()
+#18 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#19 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\web\CWebApplication.php(282): CController->run('update')
+#20 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\web\CWebApplication.php(141): CWebApplication->runController('products/update')
+#21 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#22 C:\Users\xolmu\OneDrive\Рабочий стол\shop_pet_project\index.php(13): CApplication->run()
+#23 {main}
+REQUEST_URI=/index.php?r=products/update&id=25
+HTTP_REFERER=http://project-app.com/index.php?r=products/update&id=25
+---
+2022/10/20 07:29:35 [error] [exception.CException] CException: Property "CFileValidator.0" is not defined. in C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\base\CComponent.php:173
+Stack trace:
+#0 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\validators\CValidator.php(177): CComponent->__set('0', 'allowEmpty')
+#1 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\base\CModel.php(287): CValidator::createValidator(0, Object(Products), Array, Array)
+#2 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\base\CModel.php(260): CModel->createValidators()
+#3 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\base\CModel.php(304): CModel->getValidators('title')
+#4 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\web\helpers\CHtml.php(1534): CModel->isAttributeRequired('title')
+#5 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\web\widgets\CActiveForm.php(601): CHtml::activeLabelEx(Object(Products), 'title', Array)
+#6 C:\Users\xolmu\OneDrive\Рабочий стол\shop_pet_project\protected\views\products\_form.php(26): CActiveForm->labelEx(Object(Products), 'title')
+#7 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\web\CBaseController.php(126): require('C:\\Users\\xolmu\\...')
+#8 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\\Users\\xolmu\\...', Array, true)
+#9 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\web\CController.php(872): CBaseController->renderFile('C:\\Users\\xolmu\\...', Array, true)
+#10 C:\Users\xolmu\OneDrive\Рабочий стол\shop_pet_project\protected\views\products\update.php(21): CController->renderPartial('_form', Array)
+#11 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\web\CBaseController.php(126): require('C:\\Users\\xolmu\\...')
+#12 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\\Users\\xolmu\\...', Array, true)
+#13 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\web\CController.php(872): CBaseController->renderFile('C:\\Users\\xolmu\\...', Array, true)
+#14 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\web\CController.php(785): CController->renderPartial('update', Array, true)
+#15 C:\Users\xolmu\OneDrive\Рабочий стол\shop_pet_project\protected\controllers\ProductsController.php(144): CController->render('update', Array)
+#16 [internal function]: ProductsController->actionUpdate('25')
+#17 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\web\actions\CAction.php(115): ReflectionMethod->invokeArgs(Object(ProductsController), Array)
+#18 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\web\actions\CInlineAction.php(47): CAction->runWithParamsInternal(Object(ProductsController), Object(ReflectionMethod), Array)
+#19 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#20 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\web\filters\CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#21 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#22 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\web\CController.php(1148): CFilter->filter(Object(CFilterChain))
+#23 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#24 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#25 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\web\CController.php(291): CFilterChain->run()
+#26 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#27 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\web\CWebApplication.php(282): CController->run('update')
+#28 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\web\CWebApplication.php(141): CWebApplication->runController('products/update')
+#29 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#30 C:\Users\xolmu\OneDrive\Рабочий стол\shop_pet_project\index.php(13): CApplication->run()
+#31 {main}
+REQUEST_URI=/index.php?r=products/update&id=25
+---
+2022/10/20 07:29:38 [error] [exception.CException] CException: Property "CFileValidator.0" is not defined. in C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\base\CComponent.php:173
+Stack trace:
+#0 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\validators\CValidator.php(177): CComponent->__set('0', 'allowEmpty')
+#1 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\base\CModel.php(287): CValidator::createValidator(0, Object(Products), Array, Array)
+#2 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\base\CModel.php(260): CModel->createValidators()
+#3 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\base\CModel.php(304): CModel->getValidators('title')
+#4 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\web\helpers\CHtml.php(1534): CModel->isAttributeRequired('title')
+#5 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\web\widgets\CActiveForm.php(601): CHtml::activeLabelEx(Object(Products), 'title', Array)
+#6 C:\Users\xolmu\OneDrive\Рабочий стол\shop_pet_project\protected\views\products\_form.php(26): CActiveForm->labelEx(Object(Products), 'title')
+#7 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\web\CBaseController.php(126): require('C:\\Users\\xolmu\\...')
+#8 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\\Users\\xolmu\\...', Array, true)
+#9 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\web\CController.php(872): CBaseController->renderFile('C:\\Users\\xolmu\\...', Array, true)
+#10 C:\Users\xolmu\OneDrive\Рабочий стол\shop_pet_project\protected\views\products\update.php(21): CController->renderPartial('_form', Array)
+#11 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\web\CBaseController.php(126): require('C:\\Users\\xolmu\\...')
+#12 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\\Users\\xolmu\\...', Array, true)
+#13 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\web\CController.php(872): CBaseController->renderFile('C:\\Users\\xolmu\\...', Array, true)
+#14 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\web\CController.php(785): CController->renderPartial('update', Array, true)
+#15 C:\Users\xolmu\OneDrive\Рабочий стол\shop_pet_project\protected\controllers\ProductsController.php(144): CController->render('update', Array)
+#16 [internal function]: ProductsController->actionUpdate('25')
+#17 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\web\actions\CAction.php(115): ReflectionMethod->invokeArgs(Object(ProductsController), Array)
+#18 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\web\actions\CInlineAction.php(47): CAction->runWithParamsInternal(Object(ProductsController), Object(ReflectionMethod), Array)
+#19 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#20 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\web\filters\CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#21 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#22 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\web\CController.php(1148): CFilter->filter(Object(CFilterChain))
+#23 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#24 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#25 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\web\CController.php(291): CFilterChain->run()
+#26 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#27 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\web\CWebApplication.php(282): CController->run('update')
+#28 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\web\CWebApplication.php(141): CWebApplication->runController('products/update')
+#29 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#30 C:\Users\xolmu\OneDrive\Рабочий стол\shop_pet_project\index.php(13): CApplication->run()
+#31 {main}
+REQUEST_URI=/index.php?r=products/update&id=25
+---
+2022/10/20 07:29:59 [error] [exception.CException] CException: Property "CFileValidator.0" is not defined. in C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\base\CComponent.php:173
+Stack trace:
+#0 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\validators\CValidator.php(177): CComponent->__set('0', 'allowEmpty')
+#1 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\base\CModel.php(287): CValidator::createValidator(0, Object(Products), Array, Array)
+#2 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\base\CModel.php(260): CModel->createValidators()
+#3 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\base\CModel.php(304): CModel->getValidators('title')
+#4 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\web\helpers\CHtml.php(1534): CModel->isAttributeRequired('title')
+#5 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\web\widgets\CActiveForm.php(601): CHtml::activeLabelEx(Object(Products), 'title', Array)
+#6 C:\Users\xolmu\OneDrive\Рабочий стол\shop_pet_project\protected\views\products\_form.php(26): CActiveForm->labelEx(Object(Products), 'title')
+#7 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\web\CBaseController.php(126): require('C:\\Users\\xolmu\\...')
+#8 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\\Users\\xolmu\\...', Array, true)
+#9 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\web\CController.php(872): CBaseController->renderFile('C:\\Users\\xolmu\\...', Array, true)
+#10 C:\Users\xolmu\OneDrive\Рабочий стол\shop_pet_project\protected\views\products\update.php(21): CController->renderPartial('_form', Array)
+#11 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\web\CBaseController.php(126): require('C:\\Users\\xolmu\\...')
+#12 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\\Users\\xolmu\\...', Array, true)
+#13 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\web\CController.php(872): CBaseController->renderFile('C:\\Users\\xolmu\\...', Array, true)
+#14 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\web\CController.php(785): CController->renderPartial('update', Array, true)
+#15 C:\Users\xolmu\OneDrive\Рабочий стол\shop_pet_project\protected\controllers\ProductsController.php(144): CController->render('update', Array)
+#16 [internal function]: ProductsController->actionUpdate('25')
+#17 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\web\actions\CAction.php(115): ReflectionMethod->invokeArgs(Object(ProductsController), Array)
+#18 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\web\actions\CInlineAction.php(47): CAction->runWithParamsInternal(Object(ProductsController), Object(ReflectionMethod), Array)
+#19 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#20 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\web\filters\CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#21 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#22 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\web\CController.php(1148): CFilter->filter(Object(CFilterChain))
+#23 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#24 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#25 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\web\CController.php(291): CFilterChain->run()
+#26 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#27 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\web\CWebApplication.php(282): CController->run('update')
+#28 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\web\CWebApplication.php(141): CWebApplication->runController('products/update')
+#29 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#30 C:\Users\xolmu\OneDrive\Рабочий стол\shop_pet_project\index.php(13): CApplication->run()
+#31 {main}
+REQUEST_URI=/index.php?r=products/update&id=25
+---
+2022/10/20 07:30:01 [error] [exception.CException] CException: Property "CFileValidator.0" is not defined. in C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\base\CComponent.php:173
+Stack trace:
+#0 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\validators\CValidator.php(177): CComponent->__set('0', 'allowEmpty')
+#1 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\base\CModel.php(287): CValidator::createValidator(0, Object(Products), Array, Array)
+#2 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\base\CModel.php(260): CModel->createValidators()
+#3 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\base\CModel.php(304): CModel->getValidators('title')
+#4 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\web\helpers\CHtml.php(1534): CModel->isAttributeRequired('title')
+#5 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\web\widgets\CActiveForm.php(601): CHtml::activeLabelEx(Object(Products), 'title', Array)
+#6 C:\Users\xolmu\OneDrive\Рабочий стол\shop_pet_project\protected\views\products\_form.php(26): CActiveForm->labelEx(Object(Products), 'title')
+#7 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\web\CBaseController.php(126): require('C:\\Users\\xolmu\\...')
+#8 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\\Users\\xolmu\\...', Array, true)
+#9 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\web\CController.php(872): CBaseController->renderFile('C:\\Users\\xolmu\\...', Array, true)
+#10 C:\Users\xolmu\OneDrive\Рабочий стол\shop_pet_project\protected\views\products\update.php(21): CController->renderPartial('_form', Array)
+#11 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\web\CBaseController.php(126): require('C:\\Users\\xolmu\\...')
+#12 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\\Users\\xolmu\\...', Array, true)
+#13 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\web\CController.php(872): CBaseController->renderFile('C:\\Users\\xolmu\\...', Array, true)
+#14 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\web\CController.php(785): CController->renderPartial('update', Array, true)
+#15 C:\Users\xolmu\OneDrive\Рабочий стол\shop_pet_project\protected\controllers\ProductsController.php(144): CController->render('update', Array)
+#16 [internal function]: ProductsController->actionUpdate('25')
+#17 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\web\actions\CAction.php(115): ReflectionMethod->invokeArgs(Object(ProductsController), Array)
+#18 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\web\actions\CInlineAction.php(47): CAction->runWithParamsInternal(Object(ProductsController), Object(ReflectionMethod), Array)
+#19 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#20 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\web\filters\CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#21 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#22 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\web\CController.php(1148): CFilter->filter(Object(CFilterChain))
+#23 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#24 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#25 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\web\CController.php(291): CFilterChain->run()
+#26 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#27 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\web\CWebApplication.php(282): CController->run('update')
+#28 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\web\CWebApplication.php(141): CWebApplication->runController('products/update')
+#29 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#30 C:\Users\xolmu\OneDrive\Рабочий стол\shop_pet_project\index.php(13): CApplication->run()
+#31 {main}
+REQUEST_URI=/index.php?r=products/update&id=25
+---
+2022/10/20 07:30:14 [error] [exception.CException] CException: Property "CFileValidator.0" is not defined. in C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\base\CComponent.php:173
+Stack trace:
+#0 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\validators\CValidator.php(177): CComponent->__set('0', 'allowEmpty')
+#1 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\base\CModel.php(287): CValidator::createValidator(0, Object(Products), Array, Array)
+#2 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\base\CModel.php(260): CModel->createValidators()
+#3 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\base\CModel.php(304): CModel->getValidators('title')
+#4 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\web\helpers\CHtml.php(1534): CModel->isAttributeRequired('title')
+#5 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\web\widgets\CActiveForm.php(601): CHtml::activeLabelEx(Object(Products), 'title', Array)
+#6 C:\Users\xolmu\OneDrive\Рабочий стол\shop_pet_project\protected\views\products\_form.php(26): CActiveForm->labelEx(Object(Products), 'title')
+#7 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\web\CBaseController.php(126): require('C:\\Users\\xolmu\\...')
+#8 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\\Users\\xolmu\\...', Array, true)
+#9 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\web\CController.php(872): CBaseController->renderFile('C:\\Users\\xolmu\\...', Array, true)
+#10 C:\Users\xolmu\OneDrive\Рабочий стол\shop_pet_project\protected\views\products\update.php(21): CController->renderPartial('_form', Array)
+#11 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\web\CBaseController.php(126): require('C:\\Users\\xolmu\\...')
+#12 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\\Users\\xolmu\\...', Array, true)
+#13 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\web\CController.php(872): CBaseController->renderFile('C:\\Users\\xolmu\\...', Array, true)
+#14 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\web\CController.php(785): CController->renderPartial('update', Array, true)
+#15 C:\Users\xolmu\OneDrive\Рабочий стол\shop_pet_project\protected\controllers\ProductsController.php(144): CController->render('update', Array)
+#16 [internal function]: ProductsController->actionUpdate('25')
+#17 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\web\actions\CAction.php(115): ReflectionMethod->invokeArgs(Object(ProductsController), Array)
+#18 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\web\actions\CInlineAction.php(47): CAction->runWithParamsInternal(Object(ProductsController), Object(ReflectionMethod), Array)
+#19 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#20 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\web\filters\CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#21 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#22 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\web\CController.php(1148): CFilter->filter(Object(CFilterChain))
+#23 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#24 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#25 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\web\CController.php(291): CFilterChain->run()
+#26 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#27 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\web\CWebApplication.php(282): CController->run('update')
+#28 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\web\CWebApplication.php(141): CWebApplication->runController('products/update')
+#29 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#30 C:\Users\xolmu\OneDrive\Рабочий стол\shop_pet_project\index.php(13): CApplication->run()
+#31 {main}
+REQUEST_URI=/index.php?r=products/update&id=25
+---
+2022/10/20 07:30:32 [error] [exception.CException] CException: Property "CFileValidator.0" is not defined. in C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\base\CComponent.php:173
+Stack trace:
+#0 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\validators\CValidator.php(177): CComponent->__set('0', 'allowEmpty')
+#1 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\base\CModel.php(287): CValidator::createValidator(0, Object(Products), Array, Array)
+#2 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\base\CModel.php(260): CModel->createValidators()
+#3 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\base\CModel.php(304): CModel->getValidators('title')
+#4 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\web\helpers\CHtml.php(1534): CModel->isAttributeRequired('title')
+#5 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\web\widgets\CActiveForm.php(601): CHtml::activeLabelEx(Object(Products), 'title', Array)
+#6 C:\Users\xolmu\OneDrive\Рабочий стол\shop_pet_project\protected\views\products\_form.php(26): CActiveForm->labelEx(Object(Products), 'title')
+#7 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\web\CBaseController.php(126): require('C:\\Users\\xolmu\\...')
+#8 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\\Users\\xolmu\\...', Array, true)
+#9 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\web\CController.php(872): CBaseController->renderFile('C:\\Users\\xolmu\\...', Array, true)
+#10 C:\Users\xolmu\OneDrive\Рабочий стол\shop_pet_project\protected\views\products\update.php(21): CController->renderPartial('_form', Array)
+#11 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\web\CBaseController.php(126): require('C:\\Users\\xolmu\\...')
+#12 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\\Users\\xolmu\\...', Array, true)
+#13 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\web\CController.php(872): CBaseController->renderFile('C:\\Users\\xolmu\\...', Array, true)
+#14 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\web\CController.php(785): CController->renderPartial('update', Array, true)
+#15 C:\Users\xolmu\OneDrive\Рабочий стол\shop_pet_project\protected\controllers\ProductsController.php(144): CController->render('update', Array)
+#16 [internal function]: ProductsController->actionUpdate('25')
+#17 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\web\actions\CAction.php(115): ReflectionMethod->invokeArgs(Object(ProductsController), Array)
+#18 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\web\actions\CInlineAction.php(47): CAction->runWithParamsInternal(Object(ProductsController), Object(ReflectionMethod), Array)
+#19 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#20 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\web\filters\CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#21 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#22 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\web\CController.php(1148): CFilter->filter(Object(CFilterChain))
+#23 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#24 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#25 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\web\CController.php(291): CFilterChain->run()
+#26 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#27 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\web\CWebApplication.php(282): CController->run('update')
+#28 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\web\CWebApplication.php(141): CWebApplication->runController('products/update')
+#29 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#30 C:\Users\xolmu\OneDrive\Рабочий стол\shop_pet_project\index.php(13): CApplication->run()
+#31 {main}
+REQUEST_URI=/index.php?r=products/update&id=25
+---
+2022/10/20 07:35:20 [error] [exception.CException] CException: Property "CFileValidator.0" is not defined. in C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\base\CComponent.php:173
+Stack trace:
+#0 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\validators\CValidator.php(177): CComponent->__set('0', 'encoding')
+#1 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\base\CModel.php(287): CValidator::createValidator(0, Object(Products), Array, Array)
+#2 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\base\CModel.php(260): CModel->createValidators()
+#3 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\base\CModel.php(547): CModel->getValidators()
+#4 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\base\CModel.php(468): CModel->getSafeAttributeNames()
+#5 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\base\CComponent.php(152): CModel->setAttributes(Array)
+#6 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\db\ar\CActiveRecord.php(162): CComponent->__set('attributes', Array)
+#7 C:\Users\xolmu\OneDrive\Рабочий стол\shop_pet_project\protected\controllers\ProductsController.php(118): CActiveRecord->__set('attributes', Array)
+#8 [internal function]: ProductsController->actionUpdate(4)
+#9 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\web\actions\CAction.php(115): ReflectionMethod->invokeArgs(Object(ProductsController), Array)
+#10 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\web\actions\CInlineAction.php(47): CAction->runWithParamsInternal(Object(ProductsController), Object(ReflectionMethod), Array)
+#11 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#12 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\web\filters\CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#13 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#14 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\web\CController.php(1148): CFilter->filter(Object(CFilterChain))
+#15 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#16 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#17 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\web\CController.php(291): CFilterChain->run()
+#18 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#19 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\web\CWebApplication.php(282): CController->run('update')
+#20 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\web\CWebApplication.php(141): CWebApplication->runController('products/update')
+#21 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#22 C:\Users\xolmu\OneDrive\Рабочий стол\shop_pet_project\index.php(13): CApplication->run()
+#23 {main}
+REQUEST_URI=/index.php?r=products/update&id=25
+HTTP_REFERER=http://project-app.com/index.php?r=products/update&id=25
+---
+2022/10/20 07:35:31 [error] [exception.CException] CException: Property "CFileValidator.encoding" is not defined. in C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\base\CComponent.php:173
+Stack trace:
+#0 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\validators\CValidator.php(177): CComponent->__set('encoding', true)
+#1 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\base\CModel.php(287): CValidator::createValidator('encoding', Object(Products), Array, Array)
+#2 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\base\CModel.php(260): CModel->createValidators()
+#3 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\base\CModel.php(547): CModel->getValidators()
+#4 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\base\CModel.php(468): CModel->getSafeAttributeNames()
+#5 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\base\CComponent.php(152): CModel->setAttributes(Array)
+#6 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\db\ar\CActiveRecord.php(162): CComponent->__set('attributes', Array)
+#7 C:\Users\xolmu\OneDrive\Рабочий стол\shop_pet_project\protected\controllers\ProductsController.php(118): CActiveRecord->__set('attributes', Array)
+#8 [internal function]: ProductsController->actionUpdate(4)
+#9 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\web\actions\CAction.php(115): ReflectionMethod->invokeArgs(Object(ProductsController), Array)
+#10 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\web\actions\CInlineAction.php(47): CAction->runWithParamsInternal(Object(ProductsController), Object(ReflectionMethod), Array)
+#11 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#12 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\web\filters\CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#13 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#14 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\web\CController.php(1148): CFilter->filter(Object(CFilterChain))
+#15 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#16 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#17 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\web\CController.php(291): CFilterChain->run()
+#18 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#19 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\web\CWebApplication.php(282): CController->run('update')
+#20 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\web\CWebApplication.php(141): CWebApplication->runController('products/update')
+#21 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#22 C:\Users\xolmu\OneDrive\Рабочий стол\shop_pet_project\index.php(13): CApplication->run()
+#23 {main}
+REQUEST_URI=/index.php?r=products/update&id=25
+HTTP_REFERER=http://project-app.com/index.php?r=products/update&id=25
+---
+2022/10/20 07:47:51 [error] [exception.CException] CException: Property "CActiveDataProvider.condition" is not defined. in C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\base\CComponent.php:173
+Stack trace:
+#0 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\web\CActiveDataProvider.php(96): CComponent->__set('condition', 'is_deleted=0')
+#1 C:\Users\xolmu\OneDrive\Рабочий стол\shop_pet_project\protected\controllers\CategoryController.php(126): CActiveDataProvider->__construct('Category', Array)
+#2 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\web\actions\CInlineAction.php(49): CategoryController->actionIndex()
+#3 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#4 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\web\filters\CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#5 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#6 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\web\CController.php(1148): CFilter->filter(Object(CFilterChain))
+#7 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#8 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#9 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\web\CController.php(291): CFilterChain->run()
+#10 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#11 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\web\CWebApplication.php(282): CController->run('')
+#12 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\web\CWebApplication.php(141): CWebApplication->runController('category')
+#13 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#14 C:\Users\xolmu\OneDrive\Рабочий стол\shop_pet_project\index.php(13): CApplication->run()
+#15 {main}
+REQUEST_URI=/index.php?r=category
+HTTP_REFERER=http://project-app.com/index.php?r=products/view&id=25
+---
+2022/10/20 07:48:30 [error] [system.db.CDbCommand] CDbCommand::fetchColumn() failed: SQLSTATE[23000]: Integrity constraint violation: 1052 Column 'is_deleted' in where clause is ambiguous. The SQL statement executed was: SELECT COUNT(DISTINCT `t`.`id`) FROM `categories` `t`  LEFT OUTER JOIN `products` `products` ON (`products`.`category_id`=`t`.`id`) WHERE (is_deleted=0).
+in C:\Users\xolmu\OneDrive\Рабочий стол\shop_pet_project\protected\views\category\index.php (18)
+in C:\Users\xolmu\OneDrive\Рабочий стол\shop_pet_project\protected\controllers\CategoryController.php (135)
+in C:\Users\xolmu\OneDrive\Рабочий стол\shop_pet_project\index.php (13)
+2022/10/20 07:48:30 [error] [exception.CDbException] CDbException: CDbCommand failed to execute the SQL statement: SQLSTATE[23000]: Integrity constraint violation: 1052 Column 'is_deleted' in where clause is ambiguous. The SQL statement executed was: SELECT COUNT(DISTINCT `t`.`id`) FROM `categories` `t`  LEFT OUTER JOIN `products` `products` ON (`products`.`category_id`=`t`.`id`) WHERE (is_deleted=0) in C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\db\CDbCommand.php:543
+Stack trace:
+#0 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\db\CDbCommand.php(433): CDbCommand->queryInternal('fetchColumn', 0, Array)
+#1 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\db\ar\CActiveFinder.php(766): CDbCommand->queryScalar()
+#2 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\db\ar\CActiveFinder.php(151): CJoinElement->count(Object(CDbCriteria))
+#3 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\db\ar\CActiveRecord.php(1613): CActiveFinder->count(Object(CDbCriteria))
+#4 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\web\CActiveDataProvider.php(228): CActiveRecord->count(Object(CDbCriteria))
+#5 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\web\CDataProvider.php(224): CActiveDataProvider->calculateTotalItemCount()
+#6 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\web\CActiveDataProvider.php(178): CDataProvider->getTotalItemCount()
+#7 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\web\CDataProvider.php(168): CActiveDataProvider->fetchData()
+#8 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\zii\widgets\CBaseListView.php(125): CDataProvider->getData()
+#9 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\zii\widgets\CListView.php(211): CBaseListView->init()
+#10 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\web\CBaseController.php(147): CListView->init()
+#11 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\web\CBaseController.php(181): CBaseController->createWidget('zii.widgets.CLi...', Array)
+#12 C:\Users\xolmu\OneDrive\Рабочий стол\shop_pet_project\protected\views\category\index.php(18): CBaseController->widget('zii.widgets.CLi...', Array)
+#13 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\web\CBaseController.php(126): require('C:\\Users\\xolmu\\...')
+#14 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\\Users\\xolmu\\...', Array, true)
+#15 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\web\CController.php(872): CBaseController->renderFile('C:\\Users\\xolmu\\...', Array, true)
+#16 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\web\CController.php(785): CController->renderPartial('index', Array, true)
+#17 C:\Users\xolmu\OneDrive\Рабочий стол\shop_pet_project\protected\controllers\CategoryController.php(135): CController->render('index', Array)
+#18 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\web\actions\CInlineAction.php(49): CategoryController->actionIndex()
+#19 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#20 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\web\filters\CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#21 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#22 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\web\CController.php(1148): CFilter->filter(Object(CFilterChain))
+#23 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#24 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#25 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\web\CController.php(291): CFilterChain->run()
+#26 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#27 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\web\CWebApplication.php(282): CController->run('')
+#28 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\web\CWebApplication.php(141): CWebApplication->runController('category')
+#29 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#30 C:\Users\xolmu\OneDrive\Рабочий стол\shop_pet_project\index.php(13): CApplication->run()
+#31 {main}
+REQUEST_URI=/index.php?r=category
+HTTP_REFERER=http://project-app.com/index.php?r=products/view&id=25
+---
+2022/10/20 07:49:21 [error] [system.db.CDbCommand] CDbCommand::fetchAll() failed: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'products.is_deleted' in 'where clause'. The SQL statement executed was: SELECT `t`.`id` AS `t0_c0`, `t`.`title` AS `t0_c1`, `t`.`status` AS `t0_c2`, `t`.`created_at` AS `t0_c3`, `t`.`updated_at` AS `t0_c4`, `t`.`is_deleted` AS `t0_c5` FROM `categories` `t`  WHERE (`products`.`is_deleted`=0) ORDER BY created_at DESC LIMIT 10.
+in C:\Users\xolmu\OneDrive\Рабочий стол\shop_pet_project\protected\views\category\index.php (18)
+in C:\Users\xolmu\OneDrive\Рабочий стол\shop_pet_project\protected\controllers\CategoryController.php (135)
+in C:\Users\xolmu\OneDrive\Рабочий стол\shop_pet_project\index.php (13)
+2022/10/20 07:49:21 [error] [exception.CDbException] CDbException: CDbCommand failed to execute the SQL statement: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'products.is_deleted' in 'where clause'. The SQL statement executed was: SELECT `t`.`id` AS `t0_c0`, `t`.`title` AS `t0_c1`, `t`.`status` AS `t0_c2`, `t`.`created_at` AS `t0_c3`, `t`.`updated_at` AS `t0_c4`, `t`.`is_deleted` AS `t0_c5` FROM `categories` `t`  WHERE (`products`.`is_deleted`=0) ORDER BY created_at DESC LIMIT 10 in C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\db\CDbCommand.php:543
+Stack trace:
+#0 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\db\CDbCommand.php(396): CDbCommand->queryInternal('fetchAll', Array, Array)
+#1 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\db\ar\CActiveFinder.php(810): CDbCommand->queryAll()
+#2 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\db\ar\CActiveFinder.php(441): CJoinElement->runQuery(Object(CJoinQuery))
+#3 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\db\ar\CActiveFinder.php(68): CJoinElement->find(Object(CDbCriteria))
+#4 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\db\ar\CActiveRecord.php(1364): CActiveFinder->query(Object(CDbCriteria), true)
+#5 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\db\ar\CActiveRecord.php(1478): CActiveRecord->query(Object(CDbCriteria), true)
+#6 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\web\CActiveDataProvider.php(199): CActiveRecord->findAll(Object(CDbCriteria))
+#7 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\web\CDataProvider.php(168): CActiveDataProvider->fetchData()
+#8 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\zii\widgets\CBaseListView.php(125): CDataProvider->getData()
+#9 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\zii\widgets\CListView.php(211): CBaseListView->init()
+#10 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\web\CBaseController.php(147): CListView->init()
+#11 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\web\CBaseController.php(181): CBaseController->createWidget('zii.widgets.CLi...', Array)
+#12 C:\Users\xolmu\OneDrive\Рабочий стол\shop_pet_project\protected\views\category\index.php(18): CBaseController->widget('zii.widgets.CLi...', Array)
+#13 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\web\CBaseController.php(126): require('C:\\Users\\xolmu\\...')
+#14 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\\Users\\xolmu\\...', Array, true)
+#15 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\web\CController.php(872): CBaseController->renderFile('C:\\Users\\xolmu\\...', Array, true)
+#16 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\web\CController.php(785): CController->renderPartial('index', Array, true)
+#17 C:\Users\xolmu\OneDrive\Рабочий стол\shop_pet_project\protected\controllers\CategoryController.php(135): CController->render('index', Array)
+#18 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\web\actions\CInlineAction.php(49): CategoryController->actionIndex()
+#19 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#20 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\web\filters\CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#21 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#22 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\web\CController.php(1148): CFilter->filter(Object(CFilterChain))
+#23 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#24 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#25 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\web\CController.php(291): CFilterChain->run()
+#26 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#27 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\web\CWebApplication.php(282): CController->run('')
+#28 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\web\CWebApplication.php(141): CWebApplication->runController('category')
+#29 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#30 C:\Users\xolmu\OneDrive\Рабочий стол\shop_pet_project\index.php(13): CApplication->run()
+#31 {main}
+REQUEST_URI=/index.php?r=category
+HTTP_REFERER=http://project-app.com/index.php?r=products/view&id=25
+---
+2022/10/20 08:00:01 [error] [exception.ParseError] ParseError: syntax error, unexpected token ")", expecting "->" or "?->" or "{" or "[" in C:\Users\xolmu\OneDrive\Рабочий стол\shop_pet_project\protected\views\category\view.php:22
+Stack trace:
+#0 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\\Users\\xolmu\\...', Array, true)
+#1 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\web\CController.php(872): CBaseController->renderFile('C:\\Users\\xolmu\\...', Array, true)
+#2 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\web\CController.php(785): CController->renderPartial('view', Array, true)
+#3 C:\Users\xolmu\OneDrive\Рабочий стол\shop_pet_project\protected\controllers\CategoryController.php(59): CController->render('view', Array)
+#4 [internal function]: CategoryController->actionView('2')
+#5 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\web\actions\CAction.php(115): ReflectionMethod->invokeArgs(Object(CategoryController), Array)
+#6 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\web\actions\CInlineAction.php(47): CAction->runWithParamsInternal(Object(CategoryController), Object(ReflectionMethod), Array)
+#7 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#8 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\web\filters\CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#9 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#10 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\web\CController.php(1148): CFilter->filter(Object(CFilterChain))
+#11 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#12 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#13 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\web\CController.php(291): CFilterChain->run()
+#14 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#15 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\web\CWebApplication.php(282): CController->run('view')
+#16 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\web\CWebApplication.php(141): CWebApplication->runController('category/view')
+#17 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#18 C:\Users\xolmu\OneDrive\Рабочий стол\shop_pet_project\index.php(13): CApplication->run()
+#19 {main}
+REQUEST_URI=/index.php?r=category/view&id=2
+HTTP_REFERER=http://project-app.com/index.php?r=category/index
+---
+2022/10/20 08:00:17 [error] [exception.ParseError] ParseError: syntax error, unexpected token ")", expecting "->" or "?->" or "{" or "[" in C:\Users\xolmu\OneDrive\Рабочий стол\shop_pet_project\protected\views\category\view.php:21
+Stack trace:
+#0 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\\Users\\xolmu\\...', Array, true)
+#1 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\web\CController.php(872): CBaseController->renderFile('C:\\Users\\xolmu\\...', Array, true)
+#2 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\web\CController.php(785): CController->renderPartial('view', Array, true)
+#3 C:\Users\xolmu\OneDrive\Рабочий стол\shop_pet_project\protected\controllers\CategoryController.php(59): CController->render('view', Array)
+#4 [internal function]: CategoryController->actionView('2')
+#5 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\web\actions\CAction.php(115): ReflectionMethod->invokeArgs(Object(CategoryController), Array)
+#6 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\web\actions\CInlineAction.php(47): CAction->runWithParamsInternal(Object(CategoryController), Object(ReflectionMethod), Array)
+#7 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#8 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\web\filters\CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#9 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#10 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\web\CController.php(1148): CFilter->filter(Object(CFilterChain))
+#11 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#12 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#13 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\web\CController.php(291): CFilterChain->run()
+#14 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#15 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\web\CWebApplication.php(282): CController->run('view')
+#16 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\web\CWebApplication.php(141): CWebApplication->runController('category/view')
+#17 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#18 C:\Users\xolmu\OneDrive\Рабочий стол\shop_pet_project\index.php(13): CApplication->run()
+#19 {main}
+REQUEST_URI=/index.php?r=category/view&id=2
+HTTP_REFERER=http://project-app.com/index.php?r=category/index
+---
+2022/10/20 09:37:51 [error] [php] Undefined variable $user (C:\Users\xolmu\OneDrive\Рабочий стол\shop_pet_project\protected\components\UserIdentity.php:33)
+Stack trace:
+#0 C:\Users\xolmu\OneDrive\Рабочий стол\shop_pet_project\protected\models\LoginForm.php(54): UserIdentity->authenticate()
+#1 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\validators\CInlineValidator.php(42): LoginForm->authenticate()
+#2 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\validators\CValidator.php(201): CInlineValidator->validateAttribute()
+#3 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\base\CModel.php(159): CInlineValidator->validate()
+#4 C:\Users\xolmu\OneDrive\Рабочий стол\shop_pet_project\protected\controllers\SiteController.php(94): LoginForm->validate()
+#5 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\web\actions\CInlineAction.php(49): SiteController->actionLogin()
+#6 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\web\CController.php(308): CInlineAction->runWithParams()
+#7 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\web\CController.php(286): SiteController->runAction()
+#8 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\web\CController.php(265): SiteController->runActionWithFilters()
+#9 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\web\CWebApplication.php(282): SiteController->run()
+#10 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#11 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#12 C:\Users\xolmu\OneDrive\Рабочий стол\shop_pet_project\index.php(13): CWebApplication->run()
+REQUEST_URI=/index.php?r=site/login
+in C:\Users\xolmu\OneDrive\Рабочий стол\shop_pet_project\protected\components\UserIdentity.php (33)
+in C:\Users\xolmu\OneDrive\Рабочий стол\shop_pet_project\protected\models\LoginForm.php (54)
+in C:\Users\xolmu\OneDrive\Рабочий стол\shop_pet_project\protected\controllers\SiteController.php (94)
+2022/10/20 09:41:55 [error] [exception.CException] CException: Property "CAccessRule.role" is not defined. in C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\base\CComponent.php:173
+Stack trace:
+#0 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\web\auth\CAccessControlFilter.php(115): CComponent->__set('role', Array)
+#1 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\web\CController.php(1147): CAccessControlFilter->setRules(Array)
+#2 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#3 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#4 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\web\CController.php(291): CFilterChain->run()
+#5 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#6 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\web\CWebApplication.php(282): CController->run('')
+#7 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\web\CWebApplication.php(141): CWebApplication->runController('category')
+#8 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#9 C:\Users\xolmu\OneDrive\Рабочий стол\shop_pet_project\index.php(13): CApplication->run()
+#10 {main}
+REQUEST_URI=/index.php?r=category
+HTTP_REFERER=http://project-app.com/index.php
+---
+2022/10/20 09:42:24 [error] [exception.CHttpException.403] CHttpException: You are not authorized to perform this action. in C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\web\auth\CAccessControlFilter.php:183
+Stack trace:
+#0 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\web\auth\CAccessControlFilter.php(145): CAccessControlFilter->accessDenied(Object(WebUser), 'You are not aut...')
+#1 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\web\filters\CFilter.php(38): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\web\CController.php(1148): CFilter->filter(Object(CFilterChain))
+#3 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#4 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#5 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\web\CController.php(291): CFilterChain->run()
+#6 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\web\CWebApplication.php(282): CController->run('create')
+#8 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\web\CWebApplication.php(141): CWebApplication->runController('category/create')
+#9 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#10 C:\Users\xolmu\OneDrive\Рабочий стол\shop_pet_project\index.php(13): CApplication->run()
+#11 {main}
+REQUEST_URI=/index.php?r=category/create
+HTTP_REFERER=http://project-app.com/index.php?r=category
+---
+2022/10/20 09:43:09 [error] [exception.CHttpException.403] CHttpException: You are not authorized to perform this action. in C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\web\auth\CAccessControlFilter.php:183
+Stack trace:
+#0 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\web\auth\CAccessControlFilter.php(145): CAccessControlFilter->accessDenied(Object(WebUser), 'You are not aut...')
+#1 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\web\filters\CFilter.php(38): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\web\CController.php(1148): CFilter->filter(Object(CFilterChain))
+#3 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#4 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#5 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\web\CController.php(291): CFilterChain->run()
+#6 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\web\CWebApplication.php(282): CController->run('admin')
+#8 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\web\CWebApplication.php(141): CWebApplication->runController('category/admin')
+#9 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#10 C:\Users\xolmu\OneDrive\Рабочий стол\shop_pet_project\index.php(13): CApplication->run()
+#11 {main}
+REQUEST_URI=/index.php?r=category/admin
+HTTP_REFERER=http://project-app.com/index.php?r=category
+---
+2022/10/20 09:43:22 [error] [exception.CHttpException.404] CHttpException: The requested page does not exist. in C:\Users\xolmu\OneDrive\Рабочий стол\shop_pet_project\protected\controllers\CategoryController.php:164
+Stack trace:
+#0 C:\Users\xolmu\OneDrive\Рабочий стол\shop_pet_project\protected\controllers\CategoryController.php(59): CategoryController->loadModel('26')
+#1 [internal function]: CategoryController->actionView('26')
+#2 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\web\actions\CAction.php(115): ReflectionMethod->invokeArgs(Object(CategoryController), Array)
+#3 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\web\actions\CInlineAction.php(47): CAction->runWithParamsInternal(Object(CategoryController), Object(ReflectionMethod), Array)
+#4 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#5 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\web\filters\CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#6 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#7 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\web\CController.php(1148): CFilter->filter(Object(CFilterChain))
+#8 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#9 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#10 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\web\CController.php(291): CFilterChain->run()
+#11 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#12 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\web\CWebApplication.php(282): CController->run('view')
+#13 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\web\CWebApplication.php(141): CWebApplication->runController('category/view')
+#14 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#15 C:\Users\xolmu\OneDrive\Рабочий стол\shop_pet_project\index.php(13): CApplication->run()
+#16 {main}
+REQUEST_URI=/index.php?r=category/view&id=26
+HTTP_REFERER=http://project-app.com/index.php?r=category/view&id=2
+---
+2022/10/20 09:44:01 [error] [exception.CHttpException.404] CHttpException: The requested page does not exist. in C:\Users\xolmu\OneDrive\Рабочий стол\shop_pet_project\protected\controllers\CategoryController.php:164
+Stack trace:
+#0 C:\Users\xolmu\OneDrive\Рабочий стол\shop_pet_project\protected\controllers\CategoryController.php(59): CategoryController->loadModel('26')
+#1 [internal function]: CategoryController->actionView('26')
+#2 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\web\actions\CAction.php(115): ReflectionMethod->invokeArgs(Object(CategoryController), Array)
+#3 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\web\actions\CInlineAction.php(47): CAction->runWithParamsInternal(Object(CategoryController), Object(ReflectionMethod), Array)
+#4 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#5 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\web\filters\CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#6 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#7 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\web\CController.php(1148): CFilter->filter(Object(CFilterChain))
+#8 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#9 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#10 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\web\CController.php(291): CFilterChain->run()
+#11 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#12 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\web\CWebApplication.php(282): CController->run('view')
+#13 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\web\CWebApplication.php(141): CWebApplication->runController('category/view')
+#14 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#15 C:\Users\xolmu\OneDrive\Рабочий стол\shop_pet_project\index.php(13): CApplication->run()
+#16 {main}
+REQUEST_URI=/index.php?r=category/view&id=26
+HTTP_REFERER=http://project-app.com/index.php?r=category/view&id=2
+---
+2022/10/20 09:44:39 [error] [exception.CHttpException.404] CHttpException: The requested page does not exist. in C:\Users\xolmu\OneDrive\Рабочий стол\shop_pet_project\protected\controllers\CategoryController.php:164
+Stack trace:
+#0 C:\Users\xolmu\OneDrive\Рабочий стол\shop_pet_project\protected\controllers\CategoryController.php(59): CategoryController->loadModel('26')
+#1 [internal function]: CategoryController->actionView('26')
+#2 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\web\actions\CAction.php(115): ReflectionMethod->invokeArgs(Object(CategoryController), Array)
+#3 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\web\actions\CInlineAction.php(47): CAction->runWithParamsInternal(Object(CategoryController), Object(ReflectionMethod), Array)
+#4 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#5 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\web\filters\CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#6 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#7 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\web\CController.php(1148): CFilter->filter(Object(CFilterChain))
+#8 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#9 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#10 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\web\CController.php(291): CFilterChain->run()
+#11 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#12 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\web\CWebApplication.php(282): CController->run('view')
+#13 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\web\CWebApplication.php(141): CWebApplication->runController('category/view')
+#14 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#15 C:\Users\xolmu\OneDrive\Рабочий стол\shop_pet_project\index.php(13): CApplication->run()
+#16 {main}
+REQUEST_URI=/index.php?r=category/view&id=26
+HTTP_REFERER=http://project-app.com/index.php?r=category/view&id=2
+---
+2022/10/20 09:44:52 [error] [exception.CHttpException.403] CHttpException: You are not authorized to perform this action. in C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\web\auth\CAccessControlFilter.php:183
+Stack trace:
+#0 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\web\auth\CAccessControlFilter.php(145): CAccessControlFilter->accessDenied(Object(WebUser), 'You are not aut...')
+#1 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\web\filters\CFilter.php(38): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\web\CController.php(1148): CFilter->filter(Object(CFilterChain))
+#3 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#4 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#5 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\web\CController.php(291): CFilterChain->run()
+#6 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\web\CWebApplication.php(282): CController->run('create')
+#8 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\web\CWebApplication.php(141): CWebApplication->runController('products/create')
+#9 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#10 C:\Users\xolmu\OneDrive\Рабочий стол\shop_pet_project\index.php(13): CApplication->run()
+#11 {main}
+REQUEST_URI=/index.php?r=products/create
+HTTP_REFERER=http://project-app.com/index.php?r=products/view&id=26
+---
+2022/10/20 09:46:43 [error] [exception.TypeError] TypeError: Cannot access offset of type string on string in C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\zii\widgets\CMenu.php:273
+Stack trace:
+#0 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\zii\widgets\CMenu.php(161): CMenu->normalizeItems(Array, 'products/index', NULL)
+#1 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\web\CBaseController.php(147): CMenu->init()
+#2 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\web\CBaseController.php(181): CBaseController->createWidget('zii.widgets.CMe...', Array)
+#3 C:\Users\xolmu\OneDrive\Рабочий стол\shop_pet_project\protected\views\layouts\column2.php(15): CBaseController->widget('zii.widgets.CMe...', Array)
+#4 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\web\CBaseController.php(126): require('C:\\Users\\xolmu\\...')
+#5 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\\Users\\xolmu\\...', Array, true)
+#6 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\web\CController.php(787): CBaseController->renderFile('C:\\Users\\xolmu\\...', Array, true)
+#7 C:\Users\xolmu\OneDrive\Рабочий стол\shop_pet_project\protected\controllers\ProductsController.php(175): CController->render('index', Array)
+#8 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\web\actions\CInlineAction.php(49): ProductsController->actionIndex()
+#9 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#10 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\web\filters\CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#11 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#12 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\web\CController.php(1148): CFilter->filter(Object(CFilterChain))
+#13 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#14 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#15 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\web\CController.php(291): CFilterChain->run()
+#16 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#17 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\web\CWebApplication.php(282): CController->run('')
+#18 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\web\CWebApplication.php(141): CWebApplication->runController('products')
+#19 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#20 C:\Users\xolmu\OneDrive\Рабочий стол\shop_pet_project\index.php(13): CApplication->run()
+#21 {main}
+REQUEST_URI=/index.php?r=products
+HTTP_REFERER=http://project-app.com/index.php?r=products/view&id=26
+---
+2022/10/20 12:32:36 [error] [system.db.CDbCommand] CDbCommand::fetchAll() failed: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'pet-project.authassignment' doesn't exist. The SQL statement executed was: SELECT *
+FROM `AuthAssignment`
+WHERE userid=:userid.
+in C:\Users\xolmu\OneDrive\Рабочий стол\shop_pet_project\protected\modules\rights\components\RWebUser.php (43)
+in C:\Users\xolmu\OneDrive\Рабочий стол\shop_pet_project\index.php (13)
+2022/10/20 12:32:36 [error] [exception.CDbException] CDbException: CDbCommand failed to execute the SQL statement: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'pet-project.authassignment' doesn't exist. The SQL statement executed was: SELECT *
+FROM `AuthAssignment`
+WHERE userid=:userid in C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\db\CDbCommand.php:543
+Stack trace:
+#0 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\db\CDbCommand.php(396): CDbCommand->queryInternal('fetchAll', Array, Array)
+#1 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\web\auth\CDbAuthManager.php(337): CDbCommand->queryAll()
+#2 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\web\auth\CDbAuthManager.php(74): CDbAuthManager->getAuthAssignments(NULL)
+#3 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\web\auth\CWebUser.php(817): CDbAuthManager->checkAccess('1', NULL, Array)
+#4 C:\Users\xolmu\OneDrive\Рабочий стол\shop_pet_project\protected\modules\rights\components\RWebUser.php(43): CWebUser->checkAccess('1', Array, true)
+#5 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\web\auth\CAccessControlFilter.php(347): RWebUser->checkAccess('1')
+#6 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\web\auth\CAccessControlFilter.php(285): CAccessRule->isRoleMatched(Object(RWebUser))
+#7 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\web\auth\CAccessControlFilter.php(138): CAccessRule->isUserAllowed(Object(RWebUser), Object(ProductsController), Object(CInlineAction), '127.0.0.1', 'GET')
+#8 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\web\filters\CFilter.php(38): CAccessControlFilter->preFilter(Object(CFilterChain))
+#9 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\web\CController.php(1148): CFilter->filter(Object(CFilterChain))
+#10 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#11 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#12 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\web\CController.php(291): CFilterChain->run()
+#13 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#14 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\web\CWebApplication.php(282): CController->run('create')
+#15 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\web\CWebApplication.php(141): CWebApplication->runController('products/create')
+#16 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#17 C:\Users\xolmu\OneDrive\Рабочий стол\shop_pet_project\index.php(13): CApplication->run()
+#18 {main}
+REQUEST_URI=/index.php?r=products/create
+HTTP_REFERER=http://project-app.com/index.php?r=products/admin
+---
+2022/10/20 12:35:50 [error] [exception.CDbException] CDbException: Active record "User" is trying to select an invalid column "user.lastvisit_at". Note, the column must exist in the table or be an expression with alias. in C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\db\ar\CActiveFinder.php:967
+Stack trace:
+#0 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\db\ar\CActiveFinder.php(1286): CJoinElement->getColumnSelect(Array)
+#1 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\db\ar\CActiveFinder.php(731): CJoinQuery->__construct(Object(CJoinElement), Object(CDbCriteria))
+#2 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\db\ar\CActiveFinder.php(151): CJoinElement->count(Object(CDbCriteria))
+#3 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\db\ar\CActiveRecord.php(1613): CActiveFinder->count(Object(CDbCriteria))
+#4 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\web\CActiveDataProvider.php(228): CActiveRecord->count(Object(CDbCriteria))
+#5 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\web\CDataProvider.php(224): CActiveDataProvider->calculateTotalItemCount()
+#6 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\web\CActiveDataProvider.php(178): CDataProvider->getTotalItemCount()
+#7 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\web\CDataProvider.php(168): CActiveDataProvider->fetchData()
+#8 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\zii\widgets\CBaseListView.php(125): CDataProvider->getData()
+#9 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\zii\widgets\grid\CGridView.php(355): CBaseListView->init()
+#10 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\web\CBaseController.php(147): CGridView->init()
+#11 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\web\CBaseController.php(181): CBaseController->createWidget('zii.widgets.gri...', Array)
+#12 C:\Users\xolmu\OneDrive\Рабочий стол\shop_pet_project\protected\modules\user\views\user\index.php(17): CBaseController->widget('zii.widgets.gri...', Array)
+#13 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\web\CBaseController.php(126): require('C:\\Users\\xolmu\\...')
+#14 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\\Users\\xolmu\\...', Array, true)
+#15 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\web\CController.php(872): CBaseController->renderFile('C:\\Users\\xolmu\\...', Array, true)
+#16 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\web\CController.php(785): CController->renderPartial('/user/index', Array, true)
+#17 C:\Users\xolmu\OneDrive\Рабочий стол\shop_pet_project\protected\modules\user\controllers\DefaultController.php(21): CController->render('/user/index', Array)
+#18 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\web\actions\CInlineAction.php(49): DefaultController->actionIndex()
+#19 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#20 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#21 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#22 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\web\CWebApplication.php(282): CController->run('')
+#23 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\web\CWebApplication.php(141): CWebApplication->runController('user')
+#24 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#25 C:\Users\xolmu\OneDrive\Рабочий стол\shop_pet_project\index.php(13): CApplication->run()
+#26 {main}
+REQUEST_URI=/index.php?r=user
+---
+2022/10/20 12:37:28 [error] [exception.CDbException] CDbException: Active record "User" is trying to select an invalid column "user.lastvisit_at". Note, the column must exist in the table or be an expression with alias. in C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\db\ar\CActiveFinder.php:967
+Stack trace:
+#0 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\db\ar\CActiveFinder.php(1286): CJoinElement->getColumnSelect(Array)
+#1 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\db\ar\CActiveFinder.php(731): CJoinQuery->__construct(Object(CJoinElement), Object(CDbCriteria))
+#2 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\db\ar\CActiveFinder.php(151): CJoinElement->count(Object(CDbCriteria))
+#3 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\db\ar\CActiveRecord.php(1613): CActiveFinder->count(Object(CDbCriteria))
+#4 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\web\CActiveDataProvider.php(228): CActiveRecord->count(Object(CDbCriteria))
+#5 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\web\CDataProvider.php(224): CActiveDataProvider->calculateTotalItemCount()
+#6 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\web\CActiveDataProvider.php(178): CDataProvider->getTotalItemCount()
+#7 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\web\CDataProvider.php(168): CActiveDataProvider->fetchData()
+#8 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\zii\widgets\CBaseListView.php(125): CDataProvider->getData()
+#9 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\zii\widgets\grid\CGridView.php(355): CBaseListView->init()
+#10 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\web\CBaseController.php(147): CGridView->init()
+#11 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\web\CBaseController.php(181): CBaseController->createWidget('zii.widgets.gri...', Array)
+#12 C:\Users\xolmu\OneDrive\Рабочий стол\shop_pet_project\protected\modules\user\views\user\index.php(17): CBaseController->widget('zii.widgets.gri...', Array)
+#13 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\web\CBaseController.php(126): require('C:\\Users\\xolmu\\...')
+#14 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\\Users\\xolmu\\...', Array, true)
+#15 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\web\CController.php(872): CBaseController->renderFile('C:\\Users\\xolmu\\...', Array, true)
+#16 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\web\CController.php(785): CController->renderPartial('/user/index', Array, true)
+#17 C:\Users\xolmu\OneDrive\Рабочий стол\shop_pet_project\protected\modules\user\controllers\DefaultController.php(21): CController->render('/user/index', Array)
+#18 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\web\actions\CInlineAction.php(49): DefaultController->actionIndex()
+#19 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#20 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#21 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#22 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\web\CWebApplication.php(282): CController->run('')
+#23 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\web\CWebApplication.php(141): CWebApplication->runController('user')
+#24 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#25 C:\Users\xolmu\OneDrive\Рабочий стол\shop_pet_project\index.php(13): CApplication->run()
+#26 {main}
+REQUEST_URI=/index.php?r=user
+---
+2022/10/20 12:37:29 [error] [exception.CDbException] CDbException: Active record "User" is trying to select an invalid column "user.lastvisit_at". Note, the column must exist in the table or be an expression with alias. in C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\db\ar\CActiveFinder.php:967
+Stack trace:
+#0 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\db\ar\CActiveFinder.php(1286): CJoinElement->getColumnSelect(Array)
+#1 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\db\ar\CActiveFinder.php(731): CJoinQuery->__construct(Object(CJoinElement), Object(CDbCriteria))
+#2 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\db\ar\CActiveFinder.php(151): CJoinElement->count(Object(CDbCriteria))
+#3 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\db\ar\CActiveRecord.php(1613): CActiveFinder->count(Object(CDbCriteria))
+#4 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\web\CActiveDataProvider.php(228): CActiveRecord->count(Object(CDbCriteria))
+#5 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\web\CDataProvider.php(224): CActiveDataProvider->calculateTotalItemCount()
+#6 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\web\CActiveDataProvider.php(178): CDataProvider->getTotalItemCount()
+#7 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\web\CDataProvider.php(168): CActiveDataProvider->fetchData()
+#8 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\zii\widgets\CBaseListView.php(125): CDataProvider->getData()
+#9 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\zii\widgets\grid\CGridView.php(355): CBaseListView->init()
+#10 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\web\CBaseController.php(147): CGridView->init()
+#11 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\web\CBaseController.php(181): CBaseController->createWidget('zii.widgets.gri...', Array)
+#12 C:\Users\xolmu\OneDrive\Рабочий стол\shop_pet_project\protected\modules\user\views\user\index.php(17): CBaseController->widget('zii.widgets.gri...', Array)
+#13 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\web\CBaseController.php(126): require('C:\\Users\\xolmu\\...')
+#14 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\\Users\\xolmu\\...', Array, true)
+#15 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\web\CController.php(872): CBaseController->renderFile('C:\\Users\\xolmu\\...', Array, true)
+#16 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\web\CController.php(785): CController->renderPartial('/user/index', Array, true)
+#17 C:\Users\xolmu\OneDrive\Рабочий стол\shop_pet_project\protected\modules\user\controllers\DefaultController.php(21): CController->render('/user/index', Array)
+#18 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\web\actions\CInlineAction.php(49): DefaultController->actionIndex()
+#19 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#20 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#21 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#22 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\web\CWebApplication.php(282): CController->run('')
+#23 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\web\CWebApplication.php(141): CWebApplication->runController('user')
+#24 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#25 C:\Users\xolmu\OneDrive\Рабочий стол\shop_pet_project\index.php(13): CApplication->run()
+#26 {main}
+REQUEST_URI=/index.php?r=user
+---
+2022/10/20 12:37:30 [error] [exception.CDbException] CDbException: Active record "User" is trying to select an invalid column "user.lastvisit_at". Note, the column must exist in the table or be an expression with alias. in C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\db\ar\CActiveFinder.php:967
+Stack trace:
+#0 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\db\ar\CActiveFinder.php(1286): CJoinElement->getColumnSelect(Array)
+#1 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\db\ar\CActiveFinder.php(731): CJoinQuery->__construct(Object(CJoinElement), Object(CDbCriteria))
+#2 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\db\ar\CActiveFinder.php(151): CJoinElement->count(Object(CDbCriteria))
+#3 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\db\ar\CActiveRecord.php(1613): CActiveFinder->count(Object(CDbCriteria))
+#4 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\web\CActiveDataProvider.php(228): CActiveRecord->count(Object(CDbCriteria))
+#5 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\web\CDataProvider.php(224): CActiveDataProvider->calculateTotalItemCount()
+#6 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\web\CActiveDataProvider.php(178): CDataProvider->getTotalItemCount()
+#7 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\web\CDataProvider.php(168): CActiveDataProvider->fetchData()
+#8 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\zii\widgets\CBaseListView.php(125): CDataProvider->getData()
+#9 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\zii\widgets\grid\CGridView.php(355): CBaseListView->init()
+#10 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\web\CBaseController.php(147): CGridView->init()
+#11 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\web\CBaseController.php(181): CBaseController->createWidget('zii.widgets.gri...', Array)
+#12 C:\Users\xolmu\OneDrive\Рабочий стол\shop_pet_project\protected\modules\user\views\user\index.php(17): CBaseController->widget('zii.widgets.gri...', Array)
+#13 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\web\CBaseController.php(126): require('C:\\Users\\xolmu\\...')
+#14 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\\Users\\xolmu\\...', Array, true)
+#15 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\web\CController.php(872): CBaseController->renderFile('C:\\Users\\xolmu\\...', Array, true)
+#16 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\web\CController.php(785): CController->renderPartial('/user/index', Array, true)
+#17 C:\Users\xolmu\OneDrive\Рабочий стол\shop_pet_project\protected\modules\user\controllers\DefaultController.php(21): CController->render('/user/index', Array)
+#18 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\web\actions\CInlineAction.php(49): DefaultController->actionIndex()
+#19 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#20 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#21 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#22 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\web\CWebApplication.php(282): CController->run('')
+#23 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\web\CWebApplication.php(141): CWebApplication->runController('user')
+#24 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#25 C:\Users\xolmu\OneDrive\Рабочий стол\shop_pet_project\index.php(13): CApplication->run()
+#26 {main}
+REQUEST_URI=/index.php?r=user
+---
+2022/10/20 12:37:30 [error] [exception.CDbException] CDbException: Active record "User" is trying to select an invalid column "user.lastvisit_at". Note, the column must exist in the table or be an expression with alias. in C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\db\ar\CActiveFinder.php:967
+Stack trace:
+#0 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\db\ar\CActiveFinder.php(1286): CJoinElement->getColumnSelect(Array)
+#1 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\db\ar\CActiveFinder.php(731): CJoinQuery->__construct(Object(CJoinElement), Object(CDbCriteria))
+#2 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\db\ar\CActiveFinder.php(151): CJoinElement->count(Object(CDbCriteria))
+#3 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\db\ar\CActiveRecord.php(1613): CActiveFinder->count(Object(CDbCriteria))
+#4 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\web\CActiveDataProvider.php(228): CActiveRecord->count(Object(CDbCriteria))
+#5 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\web\CDataProvider.php(224): CActiveDataProvider->calculateTotalItemCount()
+#6 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\web\CActiveDataProvider.php(178): CDataProvider->getTotalItemCount()
+#7 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\web\CDataProvider.php(168): CActiveDataProvider->fetchData()
+#8 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\zii\widgets\CBaseListView.php(125): CDataProvider->getData()
+#9 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\zii\widgets\grid\CGridView.php(355): CBaseListView->init()
+#10 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\web\CBaseController.php(147): CGridView->init()
+#11 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\web\CBaseController.php(181): CBaseController->createWidget('zii.widgets.gri...', Array)
+#12 C:\Users\xolmu\OneDrive\Рабочий стол\shop_pet_project\protected\modules\user\views\user\index.php(17): CBaseController->widget('zii.widgets.gri...', Array)
+#13 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\web\CBaseController.php(126): require('C:\\Users\\xolmu\\...')
+#14 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\\Users\\xolmu\\...', Array, true)
+#15 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\web\CController.php(872): CBaseController->renderFile('C:\\Users\\xolmu\\...', Array, true)
+#16 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\web\CController.php(785): CController->renderPartial('/user/index', Array, true)
+#17 C:\Users\xolmu\OneDrive\Рабочий стол\shop_pet_project\protected\modules\user\controllers\DefaultController.php(21): CController->render('/user/index', Array)
+#18 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\web\actions\CInlineAction.php(49): DefaultController->actionIndex()
+#19 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#20 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#21 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#22 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\web\CWebApplication.php(282): CController->run('')
+#23 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\web\CWebApplication.php(141): CWebApplication->runController('user')
+#24 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#25 C:\Users\xolmu\OneDrive\Рабочий стол\shop_pet_project\index.php(13): CApplication->run()
+#26 {main}
+REQUEST_URI=/index.php?r=user
+---
+2022/10/20 12:38:02 [error] [exception.CDbException] CDbException: Active record "User" is trying to select an invalid column "user.lastvisit_at". Note, the column must exist in the table or be an expression with alias. in C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\db\ar\CActiveFinder.php:967
+Stack trace:
+#0 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\db\ar\CActiveFinder.php(1286): CJoinElement->getColumnSelect(Array)
+#1 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\db\ar\CActiveFinder.php(731): CJoinQuery->__construct(Object(CJoinElement), Object(CDbCriteria))
+#2 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\db\ar\CActiveFinder.php(151): CJoinElement->count(Object(CDbCriteria))
+#3 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\db\ar\CActiveRecord.php(1613): CActiveFinder->count(Object(CDbCriteria))
+#4 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\web\CActiveDataProvider.php(228): CActiveRecord->count(Object(CDbCriteria))
+#5 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\web\CDataProvider.php(224): CActiveDataProvider->calculateTotalItemCount()
+#6 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\web\CActiveDataProvider.php(178): CDataProvider->getTotalItemCount()
+#7 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\web\CDataProvider.php(168): CActiveDataProvider->fetchData()
+#8 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\zii\widgets\CBaseListView.php(125): CDataProvider->getData()
+#9 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\zii\widgets\grid\CGridView.php(355): CBaseListView->init()
+#10 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\web\CBaseController.php(147): CGridView->init()
+#11 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\web\CBaseController.php(181): CBaseController->createWidget('zii.widgets.gri...', Array)
+#12 C:\Users\xolmu\OneDrive\Рабочий стол\shop_pet_project\protected\modules\user\views\user\index.php(17): CBaseController->widget('zii.widgets.gri...', Array)
+#13 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\web\CBaseController.php(126): require('C:\\Users\\xolmu\\...')
+#14 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\\Users\\xolmu\\...', Array, true)
+#15 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\web\CController.php(872): CBaseController->renderFile('C:\\Users\\xolmu\\...', Array, true)
+#16 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\web\CController.php(785): CController->renderPartial('/user/index', Array, true)
+#17 C:\Users\xolmu\OneDrive\Рабочий стол\shop_pet_project\protected\modules\user\controllers\DefaultController.php(21): CController->render('/user/index', Array)
+#18 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\web\actions\CInlineAction.php(49): DefaultController->actionIndex()
+#19 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#20 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#21 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#22 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\web\CWebApplication.php(282): CController->run('')
+#23 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\web\CWebApplication.php(141): CWebApplication->runController('user')
+#24 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#25 C:\Users\xolmu\OneDrive\Рабочий стол\shop_pet_project\index.php(13): CApplication->run()
+#26 {main}
+REQUEST_URI=/index.php?r=user
+---
+2022/10/20 12:38:02 [error] [exception.CDbException] CDbException: Active record "User" is trying to select an invalid column "user.lastvisit_at". Note, the column must exist in the table or be an expression with alias. in C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\db\ar\CActiveFinder.php:967
+Stack trace:
+#0 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\db\ar\CActiveFinder.php(1286): CJoinElement->getColumnSelect(Array)
+#1 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\db\ar\CActiveFinder.php(731): CJoinQuery->__construct(Object(CJoinElement), Object(CDbCriteria))
+#2 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\db\ar\CActiveFinder.php(151): CJoinElement->count(Object(CDbCriteria))
+#3 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\db\ar\CActiveRecord.php(1613): CActiveFinder->count(Object(CDbCriteria))
+#4 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\web\CActiveDataProvider.php(228): CActiveRecord->count(Object(CDbCriteria))
+#5 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\web\CDataProvider.php(224): CActiveDataProvider->calculateTotalItemCount()
+#6 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\web\CActiveDataProvider.php(178): CDataProvider->getTotalItemCount()
+#7 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\web\CDataProvider.php(168): CActiveDataProvider->fetchData()
+#8 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\zii\widgets\CBaseListView.php(125): CDataProvider->getData()
+#9 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\zii\widgets\grid\CGridView.php(355): CBaseListView->init()
+#10 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\web\CBaseController.php(147): CGridView->init()
+#11 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\web\CBaseController.php(181): CBaseController->createWidget('zii.widgets.gri...', Array)
+#12 C:\Users\xolmu\OneDrive\Рабочий стол\shop_pet_project\protected\modules\user\views\user\index.php(17): CBaseController->widget('zii.widgets.gri...', Array)
+#13 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\web\CBaseController.php(126): require('C:\\Users\\xolmu\\...')
+#14 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\\Users\\xolmu\\...', Array, true)
+#15 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\web\CController.php(872): CBaseController->renderFile('C:\\Users\\xolmu\\...', Array, true)
+#16 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\web\CController.php(785): CController->renderPartial('/user/index', Array, true)
+#17 C:\Users\xolmu\OneDrive\Рабочий стол\shop_pet_project\protected\modules\user\controllers\DefaultController.php(21): CController->render('/user/index', Array)
+#18 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\web\actions\CInlineAction.php(49): DefaultController->actionIndex()
+#19 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#20 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#21 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#22 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\web\CWebApplication.php(282): CController->run('')
+#23 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\web\CWebApplication.php(141): CWebApplication->runController('user')
+#24 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#25 C:\Users\xolmu\OneDrive\Рабочий стол\shop_pet_project\index.php(13): CApplication->run()
+#26 {main}
+REQUEST_URI=/index.php?r=user
+---
+2022/10/20 12:38:03 [error] [exception.CDbException] CDbException: Active record "User" is trying to select an invalid column "user.lastvisit_at". Note, the column must exist in the table or be an expression with alias. in C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\db\ar\CActiveFinder.php:967
+Stack trace:
+#0 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\db\ar\CActiveFinder.php(1286): CJoinElement->getColumnSelect(Array)
+#1 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\db\ar\CActiveFinder.php(731): CJoinQuery->__construct(Object(CJoinElement), Object(CDbCriteria))
+#2 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\db\ar\CActiveFinder.php(151): CJoinElement->count(Object(CDbCriteria))
+#3 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\db\ar\CActiveRecord.php(1613): CActiveFinder->count(Object(CDbCriteria))
+#4 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\web\CActiveDataProvider.php(228): CActiveRecord->count(Object(CDbCriteria))
+#5 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\web\CDataProvider.php(224): CActiveDataProvider->calculateTotalItemCount()
+#6 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\web\CActiveDataProvider.php(178): CDataProvider->getTotalItemCount()
+#7 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\web\CDataProvider.php(168): CActiveDataProvider->fetchData()
+#8 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\zii\widgets\CBaseListView.php(125): CDataProvider->getData()
+#9 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\zii\widgets\grid\CGridView.php(355): CBaseListView->init()
+#10 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\web\CBaseController.php(147): CGridView->init()
+#11 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\web\CBaseController.php(181): CBaseController->createWidget('zii.widgets.gri...', Array)
+#12 C:\Users\xolmu\OneDrive\Рабочий стол\shop_pet_project\protected\modules\user\views\user\index.php(17): CBaseController->widget('zii.widgets.gri...', Array)
+#13 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\web\CBaseController.php(126): require('C:\\Users\\xolmu\\...')
+#14 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\\Users\\xolmu\\...', Array, true)
+#15 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\web\CController.php(872): CBaseController->renderFile('C:\\Users\\xolmu\\...', Array, true)
+#16 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\web\CController.php(785): CController->renderPartial('/user/index', Array, true)
+#17 C:\Users\xolmu\OneDrive\Рабочий стол\shop_pet_project\protected\modules\user\controllers\DefaultController.php(21): CController->render('/user/index', Array)
+#18 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\web\actions\CInlineAction.php(49): DefaultController->actionIndex()
+#19 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#20 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#21 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#22 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\web\CWebApplication.php(282): CController->run('')
+#23 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\web\CWebApplication.php(141): CWebApplication->runController('user')
+#24 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#25 C:\Users\xolmu\OneDrive\Рабочий стол\shop_pet_project\index.php(13): CApplication->run()
+#26 {main}
+REQUEST_URI=/index.php?r=user
+---
+2022/10/20 12:38:03 [error] [exception.CDbException] CDbException: Active record "User" is trying to select an invalid column "user.lastvisit_at". Note, the column must exist in the table or be an expression with alias. in C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\db\ar\CActiveFinder.php:967
+Stack trace:
+#0 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\db\ar\CActiveFinder.php(1286): CJoinElement->getColumnSelect(Array)
+#1 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\db\ar\CActiveFinder.php(731): CJoinQuery->__construct(Object(CJoinElement), Object(CDbCriteria))
+#2 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\db\ar\CActiveFinder.php(151): CJoinElement->count(Object(CDbCriteria))
+#3 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\db\ar\CActiveRecord.php(1613): CActiveFinder->count(Object(CDbCriteria))
+#4 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\web\CActiveDataProvider.php(228): CActiveRecord->count(Object(CDbCriteria))
+#5 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\web\CDataProvider.php(224): CActiveDataProvider->calculateTotalItemCount()
+#6 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\web\CActiveDataProvider.php(178): CDataProvider->getTotalItemCount()
+#7 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\web\CDataProvider.php(168): CActiveDataProvider->fetchData()
+#8 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\zii\widgets\CBaseListView.php(125): CDataProvider->getData()
+#9 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\zii\widgets\grid\CGridView.php(355): CBaseListView->init()
+#10 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\web\CBaseController.php(147): CGridView->init()
+#11 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\web\CBaseController.php(181): CBaseController->createWidget('zii.widgets.gri...', Array)
+#12 C:\Users\xolmu\OneDrive\Рабочий стол\shop_pet_project\protected\modules\user\views\user\index.php(17): CBaseController->widget('zii.widgets.gri...', Array)
+#13 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\web\CBaseController.php(126): require('C:\\Users\\xolmu\\...')
+#14 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\\Users\\xolmu\\...', Array, true)
+#15 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\web\CController.php(872): CBaseController->renderFile('C:\\Users\\xolmu\\...', Array, true)
+#16 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\web\CController.php(785): CController->renderPartial('/user/index', Array, true)
+#17 C:\Users\xolmu\OneDrive\Рабочий стол\shop_pet_project\protected\modules\user\controllers\DefaultController.php(21): CController->render('/user/index', Array)
+#18 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\web\actions\CInlineAction.php(49): DefaultController->actionIndex()
+#19 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#20 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#21 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#22 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\web\CWebApplication.php(282): CController->run('')
+#23 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\web\CWebApplication.php(141): CWebApplication->runController('user')
+#24 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#25 C:\Users\xolmu\OneDrive\Рабочий стол\shop_pet_project\index.php(13): CApplication->run()
+#26 {main}
+REQUEST_URI=/index.php?r=user
+---
+2022/10/20 12:38:04 [error] [exception.CDbException] CDbException: Active record "User" is trying to select an invalid column "user.lastvisit_at". Note, the column must exist in the table or be an expression with alias. in C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\db\ar\CActiveFinder.php:967
+Stack trace:
+#0 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\db\ar\CActiveFinder.php(1286): CJoinElement->getColumnSelect(Array)
+#1 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\db\ar\CActiveFinder.php(731): CJoinQuery->__construct(Object(CJoinElement), Object(CDbCriteria))
+#2 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\db\ar\CActiveFinder.php(151): CJoinElement->count(Object(CDbCriteria))
+#3 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\db\ar\CActiveRecord.php(1613): CActiveFinder->count(Object(CDbCriteria))
+#4 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\web\CActiveDataProvider.php(228): CActiveRecord->count(Object(CDbCriteria))
+#5 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\web\CDataProvider.php(224): CActiveDataProvider->calculateTotalItemCount()
+#6 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\web\CActiveDataProvider.php(178): CDataProvider->getTotalItemCount()
+#7 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\web\CDataProvider.php(168): CActiveDataProvider->fetchData()
+#8 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\zii\widgets\CBaseListView.php(125): CDataProvider->getData()
+#9 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\zii\widgets\grid\CGridView.php(355): CBaseListView->init()
+#10 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\web\CBaseController.php(147): CGridView->init()
+#11 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\web\CBaseController.php(181): CBaseController->createWidget('zii.widgets.gri...', Array)
+#12 C:\Users\xolmu\OneDrive\Рабочий стол\shop_pet_project\protected\modules\user\views\user\index.php(17): CBaseController->widget('zii.widgets.gri...', Array)
+#13 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\web\CBaseController.php(126): require('C:\\Users\\xolmu\\...')
+#14 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\\Users\\xolmu\\...', Array, true)
+#15 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\web\CController.php(872): CBaseController->renderFile('C:\\Users\\xolmu\\...', Array, true)
+#16 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\web\CController.php(785): CController->renderPartial('/user/index', Array, true)
+#17 C:\Users\xolmu\OneDrive\Рабочий стол\shop_pet_project\protected\modules\user\controllers\DefaultController.php(21): CController->render('/user/index', Array)
+#18 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\web\actions\CInlineAction.php(49): DefaultController->actionIndex()
+#19 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#20 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#21 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#22 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\web\CWebApplication.php(282): CController->run('')
+#23 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\web\CWebApplication.php(141): CWebApplication->runController('user')
+#24 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#25 C:\Users\xolmu\OneDrive\Рабочий стол\shop_pet_project\index.php(13): CApplication->run()
+#26 {main}
+REQUEST_URI=/index.php?r=user
+---
+2022/10/20 12:38:04 [error] [exception.CDbException] CDbException: Active record "User" is trying to select an invalid column "user.lastvisit_at". Note, the column must exist in the table or be an expression with alias. in C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\db\ar\CActiveFinder.php:967
+Stack trace:
+#0 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\db\ar\CActiveFinder.php(1286): CJoinElement->getColumnSelect(Array)
+#1 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\db\ar\CActiveFinder.php(731): CJoinQuery->__construct(Object(CJoinElement), Object(CDbCriteria))
+#2 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\db\ar\CActiveFinder.php(151): CJoinElement->count(Object(CDbCriteria))
+#3 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\db\ar\CActiveRecord.php(1613): CActiveFinder->count(Object(CDbCriteria))
+#4 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\web\CActiveDataProvider.php(228): CActiveRecord->count(Object(CDbCriteria))
+#5 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\web\CDataProvider.php(224): CActiveDataProvider->calculateTotalItemCount()
+#6 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\web\CActiveDataProvider.php(178): CDataProvider->getTotalItemCount()
+#7 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\web\CDataProvider.php(168): CActiveDataProvider->fetchData()
+#8 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\zii\widgets\CBaseListView.php(125): CDataProvider->getData()
+#9 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\zii\widgets\grid\CGridView.php(355): CBaseListView->init()
+#10 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\web\CBaseController.php(147): CGridView->init()
+#11 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\web\CBaseController.php(181): CBaseController->createWidget('zii.widgets.gri...', Array)
+#12 C:\Users\xolmu\OneDrive\Рабочий стол\shop_pet_project\protected\modules\user\views\user\index.php(17): CBaseController->widget('zii.widgets.gri...', Array)
+#13 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\web\CBaseController.php(126): require('C:\\Users\\xolmu\\...')
+#14 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\\Users\\xolmu\\...', Array, true)
+#15 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\web\CController.php(872): CBaseController->renderFile('C:\\Users\\xolmu\\...', Array, true)
+#16 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\web\CController.php(785): CController->renderPartial('/user/index', Array, true)
+#17 C:\Users\xolmu\OneDrive\Рабочий стол\shop_pet_project\protected\modules\user\controllers\DefaultController.php(21): CController->render('/user/index', Array)
+#18 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\web\actions\CInlineAction.php(49): DefaultController->actionIndex()
+#19 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#20 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#21 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#22 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\web\CWebApplication.php(282): CController->run('')
+#23 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\web\CWebApplication.php(141): CWebApplication->runController('user')
+#24 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#25 C:\Users\xolmu\OneDrive\Рабочий стол\shop_pet_project\index.php(13): CApplication->run()
+#26 {main}
+REQUEST_URI=/index.php?r=user
+---
+2022/10/20 12:38:04 [error] [exception.CDbException] CDbException: Active record "User" is trying to select an invalid column "user.lastvisit_at". Note, the column must exist in the table or be an expression with alias. in C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\db\ar\CActiveFinder.php:967
+Stack trace:
+#0 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\db\ar\CActiveFinder.php(1286): CJoinElement->getColumnSelect(Array)
+#1 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\db\ar\CActiveFinder.php(731): CJoinQuery->__construct(Object(CJoinElement), Object(CDbCriteria))
+#2 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\db\ar\CActiveFinder.php(151): CJoinElement->count(Object(CDbCriteria))
+#3 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\db\ar\CActiveRecord.php(1613): CActiveFinder->count(Object(CDbCriteria))
+#4 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\web\CActiveDataProvider.php(228): CActiveRecord->count(Object(CDbCriteria))
+#5 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\web\CDataProvider.php(224): CActiveDataProvider->calculateTotalItemCount()
+#6 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\web\CActiveDataProvider.php(178): CDataProvider->getTotalItemCount()
+#7 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\web\CDataProvider.php(168): CActiveDataProvider->fetchData()
+#8 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\zii\widgets\CBaseListView.php(125): CDataProvider->getData()
+#9 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\zii\widgets\grid\CGridView.php(355): CBaseListView->init()
+#10 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\web\CBaseController.php(147): CGridView->init()
+#11 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\web\CBaseController.php(181): CBaseController->createWidget('zii.widgets.gri...', Array)
+#12 C:\Users\xolmu\OneDrive\Рабочий стол\shop_pet_project\protected\modules\user\views\user\index.php(17): CBaseController->widget('zii.widgets.gri...', Array)
+#13 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\web\CBaseController.php(126): require('C:\\Users\\xolmu\\...')
+#14 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\\Users\\xolmu\\...', Array, true)
+#15 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\web\CController.php(872): CBaseController->renderFile('C:\\Users\\xolmu\\...', Array, true)
+#16 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\web\CController.php(785): CController->renderPartial('/user/index', Array, true)
+#17 C:\Users\xolmu\OneDrive\Рабочий стол\shop_pet_project\protected\modules\user\controllers\DefaultController.php(21): CController->render('/user/index', Array)
+#18 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\web\actions\CInlineAction.php(49): DefaultController->actionIndex()
+#19 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#20 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#21 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#22 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\web\CWebApplication.php(282): CController->run('')
+#23 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\web\CWebApplication.php(141): CWebApplication->runController('user')
+#24 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#25 C:\Users\xolmu\OneDrive\Рабочий стол\shop_pet_project\index.php(13): CApplication->run()
+#26 {main}
+REQUEST_URI=/index.php?r=user
+---
+2022/10/20 12:42:03 [error] [exception.CDbException] CDbException: Active record "User" is trying to select an invalid column "user.lastvisit_at". Note, the column must exist in the table or be an expression with alias. in C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\db\ar\CActiveFinder.php:967
+Stack trace:
+#0 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\db\ar\CActiveFinder.php(1286): CJoinElement->getColumnSelect(Array)
+#1 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\db\ar\CActiveFinder.php(731): CJoinQuery->__construct(Object(CJoinElement), Object(CDbCriteria))
+#2 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\db\ar\CActiveFinder.php(151): CJoinElement->count(Object(CDbCriteria))
+#3 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\db\ar\CActiveRecord.php(1613): CActiveFinder->count(Object(CDbCriteria))
+#4 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\web\CActiveDataProvider.php(228): CActiveRecord->count(Object(CDbCriteria))
+#5 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\web\CDataProvider.php(224): CActiveDataProvider->calculateTotalItemCount()
+#6 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\web\CActiveDataProvider.php(178): CDataProvider->getTotalItemCount()
+#7 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\web\CDataProvider.php(168): CActiveDataProvider->fetchData()
+#8 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\zii\widgets\CBaseListView.php(125): CDataProvider->getData()
+#9 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\zii\widgets\grid\CGridView.php(355): CBaseListView->init()
+#10 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\web\CBaseController.php(147): CGridView->init()
+#11 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\web\CBaseController.php(181): CBaseController->createWidget('zii.widgets.gri...', Array)
+#12 C:\Users\xolmu\OneDrive\Рабочий стол\shop_pet_project\protected\modules\user\views\user\index.php(17): CBaseController->widget('zii.widgets.gri...', Array)
+#13 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\web\CBaseController.php(126): require('C:\\Users\\xolmu\\...')
+#14 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\\Users\\xolmu\\...', Array, true)
+#15 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\web\CController.php(872): CBaseController->renderFile('C:\\Users\\xolmu\\...', Array, true)
+#16 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\web\CController.php(785): CController->renderPartial('/user/index', Array, true)
+#17 C:\Users\xolmu\OneDrive\Рабочий стол\shop_pet_project\protected\modules\user\controllers\DefaultController.php(21): CController->render('/user/index', Array)
+#18 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\web\actions\CInlineAction.php(49): DefaultController->actionIndex()
+#19 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#20 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#21 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#22 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\web\CWebApplication.php(282): CController->run('')
+#23 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\web\CWebApplication.php(141): CWebApplication->runController('user')
+#24 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#25 C:\Users\xolmu\OneDrive\Рабочий стол\shop_pet_project\index.php(13): CApplication->run()
+#26 {main}
+REQUEST_URI=/index.php?r=user
+---
+2022/10/20 12:42:04 [error] [exception.CDbException] CDbException: Active record "User" is trying to select an invalid column "user.lastvisit_at". Note, the column must exist in the table or be an expression with alias. in C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\db\ar\CActiveFinder.php:967
+Stack trace:
+#0 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\db\ar\CActiveFinder.php(1286): CJoinElement->getColumnSelect(Array)
+#1 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\db\ar\CActiveFinder.php(731): CJoinQuery->__construct(Object(CJoinElement), Object(CDbCriteria))
+#2 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\db\ar\CActiveFinder.php(151): CJoinElement->count(Object(CDbCriteria))
+#3 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\db\ar\CActiveRecord.php(1613): CActiveFinder->count(Object(CDbCriteria))
+#4 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\web\CActiveDataProvider.php(228): CActiveRecord->count(Object(CDbCriteria))
+#5 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\web\CDataProvider.php(224): CActiveDataProvider->calculateTotalItemCount()
+#6 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\web\CActiveDataProvider.php(178): CDataProvider->getTotalItemCount()
+#7 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\web\CDataProvider.php(168): CActiveDataProvider->fetchData()
+#8 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\zii\widgets\CBaseListView.php(125): CDataProvider->getData()
+#9 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\zii\widgets\grid\CGridView.php(355): CBaseListView->init()
+#10 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\web\CBaseController.php(147): CGridView->init()
+#11 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\web\CBaseController.php(181): CBaseController->createWidget('zii.widgets.gri...', Array)
+#12 C:\Users\xolmu\OneDrive\Рабочий стол\shop_pet_project\protected\modules\user\views\user\index.php(17): CBaseController->widget('zii.widgets.gri...', Array)
+#13 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\web\CBaseController.php(126): require('C:\\Users\\xolmu\\...')
+#14 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\\Users\\xolmu\\...', Array, true)
+#15 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\web\CController.php(872): CBaseController->renderFile('C:\\Users\\xolmu\\...', Array, true)
+#16 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\web\CController.php(785): CController->renderPartial('/user/index', Array, true)
+#17 C:\Users\xolmu\OneDrive\Рабочий стол\shop_pet_project\protected\modules\user\controllers\DefaultController.php(21): CController->render('/user/index', Array)
+#18 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\web\actions\CInlineAction.php(49): DefaultController->actionIndex()
+#19 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#20 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#21 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#22 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\web\CWebApplication.php(282): CController->run('')
+#23 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\web\CWebApplication.php(141): CWebApplication->runController('user')
+#24 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#25 C:\Users\xolmu\OneDrive\Рабочий стол\shop_pet_project\index.php(13): CApplication->run()
+#26 {main}
+REQUEST_URI=/index.php?r=user
+---
+2022/10/20 12:42:04 [error] [exception.CDbException] CDbException: Active record "User" is trying to select an invalid column "user.lastvisit_at". Note, the column must exist in the table or be an expression with alias. in C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\db\ar\CActiveFinder.php:967
+Stack trace:
+#0 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\db\ar\CActiveFinder.php(1286): CJoinElement->getColumnSelect(Array)
+#1 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\db\ar\CActiveFinder.php(731): CJoinQuery->__construct(Object(CJoinElement), Object(CDbCriteria))
+#2 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\db\ar\CActiveFinder.php(151): CJoinElement->count(Object(CDbCriteria))
+#3 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\db\ar\CActiveRecord.php(1613): CActiveFinder->count(Object(CDbCriteria))
+#4 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\web\CActiveDataProvider.php(228): CActiveRecord->count(Object(CDbCriteria))
+#5 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\web\CDataProvider.php(224): CActiveDataProvider->calculateTotalItemCount()
+#6 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\web\CActiveDataProvider.php(178): CDataProvider->getTotalItemCount()
+#7 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\web\CDataProvider.php(168): CActiveDataProvider->fetchData()
+#8 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\zii\widgets\CBaseListView.php(125): CDataProvider->getData()
+#9 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\zii\widgets\grid\CGridView.php(355): CBaseListView->init()
+#10 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\web\CBaseController.php(147): CGridView->init()
+#11 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\web\CBaseController.php(181): CBaseController->createWidget('zii.widgets.gri...', Array)
+#12 C:\Users\xolmu\OneDrive\Рабочий стол\shop_pet_project\protected\modules\user\views\user\index.php(17): CBaseController->widget('zii.widgets.gri...', Array)
+#13 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\web\CBaseController.php(126): require('C:\\Users\\xolmu\\...')
+#14 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\\Users\\xolmu\\...', Array, true)
+#15 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\web\CController.php(872): CBaseController->renderFile('C:\\Users\\xolmu\\...', Array, true)
+#16 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\web\CController.php(785): CController->renderPartial('/user/index', Array, true)
+#17 C:\Users\xolmu\OneDrive\Рабочий стол\shop_pet_project\protected\modules\user\controllers\DefaultController.php(21): CController->render('/user/index', Array)
+#18 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\web\actions\CInlineAction.php(49): DefaultController->actionIndex()
+#19 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#20 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#21 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#22 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\web\CWebApplication.php(282): CController->run('')
+#23 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\web\CWebApplication.php(141): CWebApplication->runController('user')
+#24 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#25 C:\Users\xolmu\OneDrive\Рабочий стол\shop_pet_project\index.php(13): CApplication->run()
+#26 {main}
+REQUEST_URI=/index.php?r=user
+---
+2022/10/20 12:42:05 [error] [exception.CDbException] CDbException: Active record "User" is trying to select an invalid column "user.lastvisit_at". Note, the column must exist in the table or be an expression with alias. in C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\db\ar\CActiveFinder.php:967
+Stack trace:
+#0 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\db\ar\CActiveFinder.php(1286): CJoinElement->getColumnSelect(Array)
+#1 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\db\ar\CActiveFinder.php(731): CJoinQuery->__construct(Object(CJoinElement), Object(CDbCriteria))
+#2 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\db\ar\CActiveFinder.php(151): CJoinElement->count(Object(CDbCriteria))
+#3 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\db\ar\CActiveRecord.php(1613): CActiveFinder->count(Object(CDbCriteria))
+#4 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\web\CActiveDataProvider.php(228): CActiveRecord->count(Object(CDbCriteria))
+#5 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\web\CDataProvider.php(224): CActiveDataProvider->calculateTotalItemCount()
+#6 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\web\CActiveDataProvider.php(178): CDataProvider->getTotalItemCount()
+#7 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\web\CDataProvider.php(168): CActiveDataProvider->fetchData()
+#8 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\zii\widgets\CBaseListView.php(125): CDataProvider->getData()
+#9 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\zii\widgets\grid\CGridView.php(355): CBaseListView->init()
+#10 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\web\CBaseController.php(147): CGridView->init()
+#11 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\web\CBaseController.php(181): CBaseController->createWidget('zii.widgets.gri...', Array)
+#12 C:\Users\xolmu\OneDrive\Рабочий стол\shop_pet_project\protected\modules\user\views\user\index.php(17): CBaseController->widget('zii.widgets.gri...', Array)
+#13 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\web\CBaseController.php(126): require('C:\\Users\\xolmu\\...')
+#14 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\\Users\\xolmu\\...', Array, true)
+#15 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\web\CController.php(872): CBaseController->renderFile('C:\\Users\\xolmu\\...', Array, true)
+#16 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\web\CController.php(785): CController->renderPartial('/user/index', Array, true)
+#17 C:\Users\xolmu\OneDrive\Рабочий стол\shop_pet_project\protected\modules\user\controllers\DefaultController.php(21): CController->render('/user/index', Array)
+#18 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\web\actions\CInlineAction.php(49): DefaultController->actionIndex()
+#19 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#20 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#21 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#22 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\web\CWebApplication.php(282): CController->run('')
+#23 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\web\CWebApplication.php(141): CWebApplication->runController('user')
+#24 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#25 C:\Users\xolmu\OneDrive\Рабочий стол\shop_pet_project\index.php(13): CApplication->run()
+#26 {main}
+REQUEST_URI=/index.php?r=user
+---
+2022/10/20 12:42:05 [error] [exception.CDbException] CDbException: Active record "User" is trying to select an invalid column "user.lastvisit_at". Note, the column must exist in the table or be an expression with alias. in C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\db\ar\CActiveFinder.php:967
+Stack trace:
+#0 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\db\ar\CActiveFinder.php(1286): CJoinElement->getColumnSelect(Array)
+#1 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\db\ar\CActiveFinder.php(731): CJoinQuery->__construct(Object(CJoinElement), Object(CDbCriteria))
+#2 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\db\ar\CActiveFinder.php(151): CJoinElement->count(Object(CDbCriteria))
+#3 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\db\ar\CActiveRecord.php(1613): CActiveFinder->count(Object(CDbCriteria))
+#4 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\web\CActiveDataProvider.php(228): CActiveRecord->count(Object(CDbCriteria))
+#5 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\web\CDataProvider.php(224): CActiveDataProvider->calculateTotalItemCount()
+#6 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\web\CActiveDataProvider.php(178): CDataProvider->getTotalItemCount()
+#7 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\web\CDataProvider.php(168): CActiveDataProvider->fetchData()
+#8 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\zii\widgets\CBaseListView.php(125): CDataProvider->getData()
+#9 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\zii\widgets\grid\CGridView.php(355): CBaseListView->init()
+#10 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\web\CBaseController.php(147): CGridView->init()
+#11 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\web\CBaseController.php(181): CBaseController->createWidget('zii.widgets.gri...', Array)
+#12 C:\Users\xolmu\OneDrive\Рабочий стол\shop_pet_project\protected\modules\user\views\user\index.php(17): CBaseController->widget('zii.widgets.gri...', Array)
+#13 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\web\CBaseController.php(126): require('C:\\Users\\xolmu\\...')
+#14 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\\Users\\xolmu\\...', Array, true)
+#15 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\web\CController.php(872): CBaseController->renderFile('C:\\Users\\xolmu\\...', Array, true)
+#16 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\web\CController.php(785): CController->renderPartial('/user/index', Array, true)
+#17 C:\Users\xolmu\OneDrive\Рабочий стол\shop_pet_project\protected\modules\user\controllers\DefaultController.php(21): CController->render('/user/index', Array)
+#18 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\web\actions\CInlineAction.php(49): DefaultController->actionIndex()
+#19 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#20 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#21 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#22 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\web\CWebApplication.php(282): CController->run('')
+#23 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\web\CWebApplication.php(141): CWebApplication->runController('user')
+#24 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#25 C:\Users\xolmu\OneDrive\Рабочий стол\shop_pet_project\index.php(13): CApplication->run()
+#26 {main}
+REQUEST_URI=/index.php?r=user
+---
+2022/10/20 12:49:40 [error] [exception.CHttpException.403] CHttpException: There must be at least one superuser! in C:\Users\xolmu\OneDrive\Рабочий стол\shop_pet_project\protected\modules\rights\components\RAuthorizer.php:305
+Stack trace:
+#0 C:\Users\xolmu\OneDrive\Рабочий стол\shop_pet_project\protected\modules\rights\controllers\AssignmentController.php(51): RAuthorizer->getSuperusers()
+#1 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\web\CController.php(1147): AssignmentController->accessRules()
+#2 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#3 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#4 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\web\CController.php(291): CFilterChain->run()
+#5 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#6 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\web\CWebApplication.php(282): CController->run('')
+#7 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\web\CWebApplication.php(141): CWebApplication->runController('rights')
+#8 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#9 C:\Users\xolmu\OneDrive\Рабочий стол\shop_pet_project\index.php(13): CApplication->run()
+#10 {main}
+REQUEST_URI=/index.php?r=rights
+---
+2022/10/20 13:28:58 [error] [exception.CHttpException.400] CHttpException: Invalid request. Please do not repeat this request again. in C:\Users\xolmu\OneDrive\Рабочий стол\shop_pet_project\protected\modules\rights\controllers\AuthItemController.php:448
+Stack trace:
+#0 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\web\actions\CInlineAction.php(49): AuthItemController->actionRemoveChild()
+#1 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#2 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\web\filters\CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#3 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#4 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\web\CController.php(1148): CFilter->filter(Object(CFilterChain))
+#5 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#6 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#7 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\web\CController.php(291): CFilterChain->run()
+#8 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#9 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\web\CWebApplication.php(282): CController->run('removeChild')
+#10 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\web\CWebApplication.php(141): CWebApplication->runController('rights/authItem...')
+#11 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#12 C:\Users\xolmu\OneDrive\Рабочий стол\shop_pet_project\index.php(13): CApplication->run()
+#13 {main}
+REQUEST_URI=/index.php?r=rights/authItem/removeChild&name=Guest&child=Category.View
+HTTP_REFERER=http://project-app.com/index.php?r=site/login
+---
+2022/10/20 13:29:13 [error] [exception.CHttpException.400] CHttpException: Invalid request. Please do not repeat this request again. in C:\Users\xolmu\OneDrive\Рабочий стол\shop_pet_project\protected\modules\rights\controllers\AuthItemController.php:448
+Stack trace:
+#0 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\web\actions\CInlineAction.php(49): AuthItemController->actionRemoveChild()
+#1 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#2 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\web\filters\CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#3 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#4 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\web\CController.php(1148): CFilter->filter(Object(CFilterChain))
+#5 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#6 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#7 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\web\CController.php(291): CFilterChain->run()
+#8 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#9 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\web\CWebApplication.php(282): CController->run('removeChild')
+#10 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\web\CWebApplication.php(141): CWebApplication->runController('rights/authItem...')
+#11 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#12 C:\Users\xolmu\OneDrive\Рабочий стол\shop_pet_project\index.php(13): CApplication->run()
+#13 {main}
+REQUEST_URI=/index.php?r=rights/authItem/removeChild&name=Guest&child=Category.View
+HTTP_REFERER=http://project-app.com/index.php?r=site/login
+---
+2022/10/20 14:46:56 [error] [exception.ParseError] ParseError: syntax error, unexpected token "return", expecting "function" or "const" in C:\Users\xolmu\OneDrive\Рабочий стол\shop_pet_project\protected\controllers\CategoryController.php:29
+Stack trace:
+#0 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\web\CWebApplication.php(276): CWebApplication->createController('view/')
+#1 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\web\CWebApplication.php(141): CWebApplication->runController('category/view')
+#2 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#3 C:\Users\xolmu\OneDrive\Рабочий стол\shop_pet_project\index.php(13): CApplication->run()
+#4 {main}
+REQUEST_URI=/index.php?r=category/view&id=2
+---
+2022/10/20 14:47:11 [error] [exception.CException] CException: RWebUser and its behaviors do not have a method or closure named "can". in C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\base\CComponent.php:266
+Stack trace:
+#0 C:\Users\xolmu\OneDrive\Рабочий стол\shop_pet_project\protected\controllers\CategoryController.php(31): CComponent->__call('can', Array)
+#1 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\web\CController.php(1147): CategoryController->accessRules()
+#2 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#3 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#4 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\web\CController.php(291): CFilterChain->run()
+#5 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#6 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\web\CWebApplication.php(282): CController->run('view')
+#7 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\web\CWebApplication.php(141): CWebApplication->runController('category/view')
+#8 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#9 C:\Users\xolmu\OneDrive\Рабочий стол\shop_pet_project\index.php(13): CApplication->run()
+#10 {main}
+REQUEST_URI=/index.php?r=category/view&id=2
+---
+2022/10/20 14:59:36 [error] [exception.CException] CException: RWebUser and its behaviors do not have a method or closure named "can". in C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\base\CComponent.php:266
+Stack trace:
+#0 C:\Users\xolmu\OneDrive\Рабочий стол\shop_pet_project\protected\controllers\CategoryController.php(31): CComponent->__call('can', Array)
+#1 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\web\CController.php(1147): CategoryController->accessRules()
+#2 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#3 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#4 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\web\CController.php(291): CFilterChain->run()
+#5 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#6 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\web\CWebApplication.php(282): CController->run('view')
+#7 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\web\CWebApplication.php(141): CWebApplication->runController('category/view')
+#8 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#9 C:\Users\xolmu\OneDrive\Рабочий стол\shop_pet_project\index.php(13): CApplication->run()
+#10 {main}
+REQUEST_URI=/index.php?r=category/view&id=2
+---
+2022/10/20 15:35:03 [error] [exception.ArgumentCountError] ArgumentCountError: Too few arguments to function CDbAuthManager::checkAccess(), 1 passed in C:\Users\xolmu\OneDrive\Рабочий стол\shop_pet_project\protected\controllers\CategoryController.php on line 31 and at least 2 expected in C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\web\auth\CDbAuthManager.php:72
+Stack trace:
+#0 C:\Users\xolmu\OneDrive\Рабочий стол\shop_pet_project\protected\controllers\CategoryController.php(31): CDbAuthManager->checkAccess('Category.View')
+#1 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\web\CController.php(1147): CategoryController->accessRules()
+#2 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#3 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#4 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\web\CController.php(291): CFilterChain->run()
+#5 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#6 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\web\CWebApplication.php(282): CController->run('view')
+#7 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\web\CWebApplication.php(141): CWebApplication->runController('category/view')
+#8 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#9 C:\Users\xolmu\OneDrive\Рабочий стол\shop_pet_project\index.php(13): CApplication->run()
+#10 {main}
+REQUEST_URI=/index.php?r=category/view&id=2
+---
+2022/10/20 15:43:27 [error] [exception.CException] CException: CDbAuthManager and its behaviors do not have a method or closure named "getAssignmentsByItemName". in C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\base\CComponent.php:266
+Stack trace:
+#0 C:\Users\xolmu\OneDrive\Рабочий стол\shop_pet_project\protected\modules\rights\components\RAuthorizer.php(285): CComponent->__call('getAssignmentsB...', Array)
+#1 C:\Users\xolmu\OneDrive\Рабочий стол\shop_pet_project\protected\modules\rights\controllers\AuthItemController.php(66): RAuthorizer->getSuperusers()
+#2 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\web\CController.php(1147): AuthItemController->accessRules()
+#3 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#4 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#5 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\web\CController.php(291): CFilterChain->run()
+#6 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\web\CWebApplication.php(282): CController->run('assign')
+#8 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\web\CWebApplication.php(141): CWebApplication->runController('rights/authItem...')
+#9 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#10 C:\Users\xolmu\OneDrive\Рабочий стол\shop_pet_project\index.php(13): CApplication->run()
+#11 {main}
+REQUEST_URI=/index.php?r=rights/authItem/assign&name=Authenticated&child=Category.View
+HTTP_REFERER=http://project-app.com/index.php?r=rights/authItem/permissions
+---
+2022/10/20 15:43:29 [error] [exception.CException] CException: CDbAuthManager and its behaviors do not have a method or closure named "getAssignmentsByItemName". in C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\base\CComponent.php:266
+Stack trace:
+#0 C:\Users\xolmu\OneDrive\Рабочий стол\shop_pet_project\protected\modules\rights\components\RAuthorizer.php(285): CComponent->__call('getAssignmentsB...', Array)
+#1 C:\Users\xolmu\OneDrive\Рабочий стол\shop_pet_project\protected\modules\rights\controllers\AuthItemController.php(66): RAuthorizer->getSuperusers()
+#2 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\web\CController.php(1147): AuthItemController->accessRules()
+#3 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#4 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#5 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\web\CController.php(291): CFilterChain->run()
+#6 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\web\CWebApplication.php(282): CController->run('assign')
+#8 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\web\CWebApplication.php(141): CWebApplication->runController('rights/authItem...')
+#9 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#10 C:\Users\xolmu\OneDrive\Рабочий стол\shop_pet_project\index.php(13): CApplication->run()
+#11 {main}
+REQUEST_URI=/index.php?r=rights/authItem/assign&name=Guest&child=Category.View
+HTTP_REFERER=http://project-app.com/index.php?r=rights/authItem/permissions
+---
+2022/10/20 15:43:30 [error] [exception.CException] CException: CDbAuthManager and its behaviors do not have a method or closure named "getAssignmentsByItemName". in C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\base\CComponent.php:266
+Stack trace:
+#0 C:\Users\xolmu\OneDrive\Рабочий стол\shop_pet_project\protected\modules\rights\components\RAuthorizer.php(285): CComponent->__call('getAssignmentsB...', Array)
+#1 C:\Users\xolmu\OneDrive\Рабочий стол\shop_pet_project\protected\modules\rights\controllers\AuthItemController.php(66): RAuthorizer->getSuperusers()
+#2 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\web\CController.php(1147): AuthItemController->accessRules()
+#3 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#4 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#5 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\web\CController.php(291): CFilterChain->run()
+#6 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\web\CWebApplication.php(282): CController->run('assign')
+#8 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\web\CWebApplication.php(141): CWebApplication->runController('rights/authItem...')
+#9 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#10 C:\Users\xolmu\OneDrive\Рабочий стол\shop_pet_project\index.php(13): CApplication->run()
+#11 {main}
+REQUEST_URI=/index.php?r=rights/authItem/assign&name=Authenticated&child=Category.View
+HTTP_REFERER=http://project-app.com/index.php?r=rights/authItem/permissions
+---
+2022/10/20 15:43:30 [error] [exception.CException] CException: CDbAuthManager and its behaviors do not have a method or closure named "getAssignmentsByItemName". in C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\base\CComponent.php:266
+Stack trace:
+#0 C:\Users\xolmu\OneDrive\Рабочий стол\shop_pet_project\protected\modules\rights\components\RAuthorizer.php(285): CComponent->__call('getAssignmentsB...', Array)
+#1 C:\Users\xolmu\OneDrive\Рабочий стол\shop_pet_project\protected\modules\rights\controllers\AuthItemController.php(66): RAuthorizer->getSuperusers()
+#2 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\web\CController.php(1147): AuthItemController->accessRules()
+#3 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#4 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#5 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\web\CController.php(291): CFilterChain->run()
+#6 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\web\CWebApplication.php(282): CController->run('assign')
+#8 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\web\CWebApplication.php(141): CWebApplication->runController('rights/authItem...')
+#9 C:\Users\xolmu\OneDrive\Рабочий стол\yii1\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#10 C:\Users\xolmu\OneDrive\Рабочий стол\shop_pet_project\index.php(13): CApplication->run()
+#11 {main}
+REQUEST_URI=/index.php?r=rights/authItem/assign&name=Authenticated&child=Category.View
+HTTP_REFERER=http://project-app.com/index.php?r=rights/authItem/permissions
+---

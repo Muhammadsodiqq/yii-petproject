@@ -42,7 +42,7 @@ class Products extends CActiveRecord
 			array('sum', 'numerical'),
 			array('title, img', 'length', 'max'=>255),
 			array('updated_at', 'safe'),
-			// array('img', 'file','types'=>'jpg, gif, png'),
+			// array('img', 'file','types'=>'jpg, gif, png','on'=>'create, update'),
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
 			array('id, title, sum, img, status, category_id, created_at, updated_at, is_deleted, user_id', 'safe', 'on'=>'search'),

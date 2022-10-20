@@ -16,6 +16,12 @@ return array(
 	'import'=>array(
 		'application.models.*',
 		'application.components.*',
+		'application.modules.user.*',
+		'application.modules.user.models.*',
+		'application.modules.user.components.*',
+		'application.modules.rights.*',
+		'application.modules.rights.models.*',
+		'application.modules.rights.components.*',
 	),
 
 	'modules'=>array(
@@ -26,14 +32,36 @@ return array(
 			// If removed, Gii defaults to localhost only. Edit carefully to taste.
 			'ipFilters'=>array('127.0.0.1','::1'),
 		),
+
+		'user' => array(
+			// названия таблиц взяты по умолчанию, их можно изменить
+			'tableUsers' => 'tbl_users',
+			'tableProfiles' => 'tbl_profiles',
+			'tableProfileFields' => 'tbl_profiles_fields',
+		),
+		'rights' => array(
+			'install'=>true
+		),
 	),
+
+	
 
 	// application components
 	'components'=>array(
 
 		'user'=>array(
+			// 'class' => 'WebUser',
+			'class' => 'RWebUser',
 			// enable cookie-based authentication
 			'allowAutoLogin'=>true,
+		),
+
+		'authManager' => array(
+			// Будем использовать свой менеджер авторизации
+			// 'class' => 'PhpAuthManager',
+			'class'=>'RDbAuthManager',
+			// Роль по умолчанию. Все, кто не админы, модераторы и юзеры — гости.
+			'defaultRoles' => array('sales'),
 		),
 
 		// uncomment the following to enable URLs in path-format

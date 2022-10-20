@@ -21,13 +21,13 @@
 
 	<div class="row">
 		<?php echo $form->labelEx($model,'username'); ?>
-		<?php echo $form->textField($model,'username',array('size'=>60,'maxlength'=>255)); ?>
+		<?php echo $form->textField($model,'username',array('size'=>60,'maxlength'=>255,"class" => "form-control")); ?>
 		<?php echo $form->error($model,'username'); ?>
 	</div>
 
 	<div class="row">
 		<?php echo $form->labelEx($model,'password'); ?>
-		<?php echo $form->passwordField($model,'password',array('size'=>60,'maxlength'=>255)); ?>
+		<?php echo $form->passwordField($model,'password',array('size'=>60,'maxlength'=>255,"class" => "form-control")); ?>
 		<?php echo $form->error($model,'password'); ?>
 	</div>
 	<div class="row buttons">
@@ -37,3 +37,9 @@
 <?php $this->endWidget(); ?>
 
 </div><!-- form -->
+
+<script>
+
+	document.querySelector('input[type="submit"]').classList.add('btn')
+	document.querySelector('input[type="submit"]').classList.add('btn-primary')
+</script>

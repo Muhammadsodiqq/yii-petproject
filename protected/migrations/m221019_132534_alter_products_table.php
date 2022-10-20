@@ -9,8 +9,7 @@ class m221019_132534_alter_products_table extends CDbMigration
 
 	public function down()
 	{
-		echo "m221019_132534_alter_products_table does not support migration down.\n";
-		return false;
+		$this->dropColumn("products", "body");
 	}
 
 	/*

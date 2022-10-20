@@ -1,4 +1,8 @@
-<?php /* @var $this Controller */ ?>
+<?php 
+if(Yii::app()->user->checkAccess('0')){
+    echo "hello, I'm sales";
+}
+/* @var $this Controller */ ?>
 <!DOCTYPE html>
 <html>
 <head>
