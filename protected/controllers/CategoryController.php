@@ -1,5 +1,6 @@
 <?php
 
+// class Controller extends RController
 class CategoryController extends Controller
 {
 	/**
@@ -14,10 +15,12 @@ class CategoryController extends Controller
 	public function filters()
 	{
 		return array(
-			'accessControl', // perform access control for CRUD operations
-			'postOnly + delete', // we only allow deletion via POST request
+			'rights', // perform access control for CRUD operations
 		);
+
+
 	}
+
 
 	/**
 	 * Specifies the access control rules.
@@ -27,31 +30,17 @@ class CategoryController extends Controller
 	public function accessRules()
 	{
 
-		echo var_dump(Yii::app()->user->id); // string(1) "1"
-		echo var_dump(Yii::app()->user->checkAccess('Category.View')); // bool(false) 
-		// echo Yii::app()->getAuthManager()->checkAccess("Category.View",$this->getId());
-		die();
-		return array(
-			array(
-				'allow' => Yii::app()->user->checkAccess("Category.View"),  // allow all users to perform 'index' and 'view' actions
-				'actions' => array('index', 'view'),
-				'users' => array('@'),
-			),
-			// array(
-			// 	'allow', // allow authenticated user to perform 'create' and 'update' actions
-			// 	'actions' => array('create', 'update'),
-			// 	'roles' => array("1"),
-			// ),
-			// array(
-			// 	'allow', // allow admin user to perform 'admin' and 'delete' actions
-			// 	'actions' => array('admin', 'delete'),
-			// 	'roles' => array('1'),
-			// ),
-			// array(
-			// 	'deny',  // deny all users
-			// 	'users' => array('*'),
-			// ),
-		);
+		
+		// return array(
+		// 	array('allow',
+		// 		'actions' => array('index', 'view', 'create'),
+		// 		'roles' => array('admin'),
+		// 	),
+		// 	array('deny',
+		// 		'actions' => array('create'),
+		// 		'users' => array('*'),
+		// 	),
+		// );
 	}
 
 	/**
@@ -60,6 +49,7 @@ class CategoryController extends Controller
 	 */
 	public function actionView($id)
 	{
+		// if (Yii::app()->user->checkAccess('createCategory'))
 		$this->render('view', array(
 			'model' => $this->loadModel($id),
 		));
@@ -71,6 +61,9 @@ class CategoryController extends Controller
 	 */
 	public function actionCreate()
 	{
+		// die("successful");
+		// echo var_dump(!Yii::app()->user->id == false ? false:true); // string(1) "1"
+		// die();
 		$model = new Category;
 
 		// Uncomment the following line if AJAX validation is needed

@@ -14,8 +14,7 @@ class ProductsController extends Controller
 	public function filters()
 	{
 		return array(
-			'accessControl', // perform access control for CRUD operations
-			'postOnly + delete', // we only allow deletion via POST request
+			'rights', // perform access control for CRUD operations
 		);
 	}
 
@@ -24,30 +23,6 @@ class ProductsController extends Controller
 	 * This method is used by the 'accessControl' filter.
 	 * @return array access control rules
 	 */
-	public function accessRules()
-	{
-		return array(
-			array(
-				'allow',  // allow all users to perform 'index' and 'view' actions
-				'actions' => array('index', 'view'),
-				'users' => array('*'),
-			),
-			array(
-				'allow', // allow authenticated user to perform 'create' and 'update' actions
-				'actions' => array('create', 'update'),
-				'roles' => array('1')
-			),
-			array(
-				'allow', // allow admin user to perform 'admin' and 'delete' actions
-				'actions' => array('admin', 'delete'),
-				'roles' => array('1')
-			),
-			array(
-				'deny',  // deny all users
-				'users' => array('*'),
-			),
-		);
-	}
 
 	/**
 	 * Displays a particular model.
@@ -70,9 +45,10 @@ class ProductsController extends Controller
 
 		// Uncomment the following line if AJAX validation is needed
 		// $this->performAjaxValidation($model);
-
+		// echo Yii::app()->user->id;
+		// die();
 		if (isset($_POST['Products'])) {
-			$id = User::model()->findByAttributes(['username' => \Yii::app()->user->id])->id;
+			$id = User::model()->findByAttributes(['id' => \Yii::app()->user->id])->id;
 			$rnd = rand(0, 9999);
 
 			$model->attributes = $_POST['Products'];

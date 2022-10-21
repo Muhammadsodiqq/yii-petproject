@@ -5,11 +5,16 @@
 $this->breadcrumbs=array(
 	'Categories',
 );
+// echo Yii::app()->user->checkAccess('Category.*');
+// die();
 
-$this->menu = Yii::app()->user->checkAccess('1') ? array(
-	array('label'=>'Create Category', 'url'=>array('create')),
+$this->menu = Yii::app()->user->checkAccess('Category.*')  ? array(
+	array('label'=>'Create Category', 'url'=>array('create')) ,
 	array('label'=>'Manage Category', 'url'=>array('admin')),
-) : [];
+) : array(
+	Yii::app()->user->checkAccess('Category.Create') ?array('label'=>'Create Category', 'url'=>array('create')) : [],
+	Yii::app()->user->checkAccess('Category.Admin') ? array('label'=>'Manage Category', 'url'=>array('admin')) : [],
+) ;
 ?>
 
 <h1>Categories</h1>

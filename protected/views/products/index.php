@@ -6,10 +6,12 @@ $this->breadcrumbs=array(
 	'Products',
 );
 
-$this->menu= Yii::app()->user->checkAccess('1') ? array(
+$this->menu = Yii::app()->user->checkAccess('Products.*') ? array(
 	array('label'=>'Create Products', 'url'=>array('create')),
-	array('label'=>'Manage Products', 'url'=>array('admin')),
-) : array();
+	array('label'=>'Manage Products', 'url'=>array('admin')),)
+	: array(
+	Yii::app()->user->checkAccess('Products.Create') ?array('label'=>'Create Products', 'url'=>array('create')) : [],
+	Yii::app()->user->checkAccess('Products.Admin') ? array('label'=>'Manage Products', 'url'=>array('admin')) : [],);
 ?>
 
 <h1>Products</h1>

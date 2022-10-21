@@ -7,14 +7,18 @@ $this->breadcrumbs=array(
 	$model->title,
 );
 
-$this->menu= Yii::app()->user->checkAccess('1') ? array(
+$this->menu = Yii::app()->user->checkAccess('Products.*') ? array(
 	array('label'=>'List Products', 'url'=>array('index')),
 	array('label'=>'Create Products', 'url'=>array('create')),
 	array('label'=>'Update Products', 'url'=>array('update', 'id'=>$model->id)),
 	array('label'=>'Delete Products', 'url'=>'#', 'linkOptions'=>array('submit'=>array('delete','id'=>$model->id),'confirm'=>'Are you sure you want to delete this item?')),
 	array('label'=>'Manage Products', 'url'=>array('admin')),
 ) : array(
-	array('label'=>'List Products', 'url'=>array('index'))
+	Yii::app()->user->checkAccess('Products.Index') ? array('label'=>'List Products', 'url'=>array('index')) : [],
+	Yii::app()->user->checkAccess('Products.Create') ? array('label'=>'Create Products', 'url'=>array('create')) : [],
+	Yii::app()->user->checkAccess('Products.Update') ? array('label'=>'Update Products', 'url'=>array('update', 'id'=>$model->id)) : [],
+	Yii::app()->user->checkAccess('Products.Delete') ? array('label'=>'Delete Products', 'url'=>'#', 'linkOptions'=>array('submit'=>array('delete','id'=>$model->id),'confirm'=>'Are you sure you want to delete this item?')) : [],
+	Yii::app()->user->checkAccess('Products.Admin') ? array('label'=>'Manage Products', 'url'=>array('admin')) : [],
 );
 ?>
 

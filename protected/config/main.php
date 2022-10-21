@@ -48,22 +48,21 @@ return array(
 
 	// application components
 	'components'=>array(
-
+		// database settings are configured in database.php
+		'db'=>require(dirname(__FILE__).'/database.php'),
+		
 		'user'=>array(
 			// 'class' => 'WebUser',
 			'class' => 'RWebUser',
 			// enable cookie-based authentication
 			'allowAutoLogin'=>true,
 		),
-
+		
 		'authManager' => array(
-			// Будем использовать свой менеджер авторизации
-			// 'class' => 'PhpAuthManager',
 			'class'=>'RDbAuthManager',
-			// Роль по умолчанию. Все, кто не админы, модераторы и юзеры — гости.
-			'defaultRoles' => array('sales'),
+			'defaultRoles'=>array('Guest'),
 		),
-
+		
 		// uncomment the following to enable URLs in path-format
 		/*
 		'urlManager'=>array(
@@ -75,9 +74,7 @@ return array(
 			),
 		),
 		*/
-
-		// database settings are configured in database.php
-		'db'=>require(dirname(__FILE__).'/database.php'),
+		
 
 		'errorHandler'=>array(
 			// use 'site/error' action to display errors
